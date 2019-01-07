@@ -21,5 +21,6 @@ Thực hiện bởi [Nguyễn Tiến Mạnh](https://github.com/tienmanh2208)
 
 ## Link bài làm Yêu cầu 3
 
+[Layout trang chủ (images)](https://tienmanh2208.github.io/project2/images/trangchu.png)
 
 ## Link bài làm Yêu cầu 4
