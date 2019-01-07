@@ -13,11 +13,11 @@ Thực hiện bởi [Nguyễn Tiến Mạnh](https://github.com/tienmanh2208)
 
 ## Link bài làm Yêu cầu 2
 
-[Ảnh và kích cỡ được sử dụng](https://tienmanh2208.github.io/web2018/images.html)
+[Ảnh và kích cỡ được sử dụng](https://tienmanh2208.github.io/project2/images.html)
 
-[Fonts và kích cỡ được sử dụng](https://tienmanh2208.github.io/web2018/fonts.html)
+[Fonts và kích cỡ được sử dụng](https://tienmanh2208.github.io/project2/fonts.html)
 
-[Màu sắc được sử dụng](https://tienmanh2208.github.io/web2018/colors.html)
+[Màu sắc được sử dụng](https://tienmanh2208.github.io/project2/colors.html)
 
 ## Link bài làm Yêu cầu 3
 
