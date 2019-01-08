@@ -23,4 +23,8 @@ Thực hiện bởi [Nguyễn Tiến Mạnh](https://github.com/tienmanh2208)
 
 [Layout trang chủ (images)](https://tienmanh2208.github.io/project2/images/trangchu.png)
 
+[Layout chi tiết (images)](https://tienmanh2208.github.io/project2/images/chitiet.png)
+
+[Layout lớp 9 (images)](https://tienmanh2208.github.io/project2/images/lop9.png)
+
 ## Link bài làm Yêu cầu 4
