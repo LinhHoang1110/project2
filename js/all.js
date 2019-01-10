@@ -2,7 +2,7 @@ var sidebar = {
     current: 0
 }
 
-window.onload = function(ev){
+window.addEventListener('load', function(ev){
     var iconplus = document.getElementsByClassName('sidebar-icon-plus');
 
     for(var i = 0; i < iconplus.length; ++i){
@@ -22,7 +22,7 @@ window.onload = function(ev){
     }
 
     // document.getElementById('header-input').style.width = 150px;
-}
+})
 
 function expandSideMenu(des){
     if(sidebar.current !== 0) {

@@ -1,4 +1,4 @@
-body { margin: 0; background-color: #f1f1f1;}
+body { margin: 0; background-color: #f1f1f1; cursor: default; }
 
 .frame {
     width: 100%;
@@ -11,6 +11,10 @@ body { margin: 0; background-color: #f1f1f1;}
 }
 
 img { object-fit: contain; }
+
+button {
+    padding: 0;
+}
 
 /* =======================header============================ */
 .menuheader, .mainpage-menuheader {
@@ -31,6 +35,10 @@ img { object-fit: contain; }
 
 .mainpage-header {
     height: 53px;
+    /* position: fixed;
+    top: 0; */
+    background-color: white;
+    z-index: 800;
 }
 
 .header-logo {
@@ -42,6 +50,10 @@ img { object-fit: contain; }
     height: 100%; 
     float: left; 
     margin-right: 8px;
+}
+
+#icon-expand {
+    display: none;
 }
 
 .header-input {
@@ -89,6 +101,7 @@ img { object-fit: contain; }
     background-color: #ff9900;
     height: 45px;
     transition: 0.5s;
+    /* margin-top: 53px; */
 }
 
 .colmenu {
@@ -111,11 +124,17 @@ img { object-fit: contain; }
     border-color: #ffad33;
 }
 
+.class, .subject {
+    cursor: pointer;
+}
+
 .mainpage-news-content {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    /* overflow: hidden; */
+    transition: 1s;
 }
 
 .post {
@@ -123,6 +142,11 @@ img { object-fit: contain; }
     background-color: white;
     padding: 25px;
     margin-bottom: 25px;
+    transition: 0.5s;
+}
+
+.post:hover {
+    box-shadow: 0 0 20px gray;
 }
 
 .post-title {
@@ -135,6 +159,7 @@ img { object-fit: contain; }
     font-family: Roboto-Medium;
     font-size: 12px;
     float: left;
+    color: #00a888;
 }
 
 .post-statistic {
@@ -201,6 +226,12 @@ img { object-fit: contain; }
     /* transition: 0.3s ease; */
 }
 
+.boardsubject {
+    height: 0;
+    overflow: hidden;
+    transition: all 1s;
+}
+
 .number {
     position: absolute;
     right: 0;
@@ -209,9 +240,9 @@ img { object-fit: contain; }
     height: 70px;
 }
 
-.the12th, .the11th, .the10th, .the9th, .the8th, .the7th, .the6th, .the5th, .the4th, .the3rd, .the2nd, .the1st {
+/* .the12th, .the11th, .the10th, .the9th, .the8th, .the7th, .the6th, .the5th, .the4th, .the3rd, .the2nd, .the1st {
     visibility: hidden;
-}
+} */
 
 .number-border {
 	position: absolute;
@@ -246,7 +277,7 @@ img { object-fit: contain; }
 }
 
 .colmenu:hover .boardsubject {
-    visibility: visible;
+    height: auto;
 }
 
 .subject:hover {
@@ -460,6 +491,7 @@ img { object-fit: contain; }
     position: absolute;
     right: 10px;
     bottom: 38px;
+    cursor: pointer;
 }
 
 .colcontent {
@@ -500,6 +532,144 @@ img { object-fit: contain; }
     margin-top: 45px;
 }
 
+/* ===========================Lop 9============================== */
+.grade-news {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.grade-content {
+    width: 70%;
+}
+
+.grade-advertisement {
+    width: 300px;
+    margin-left: 30px;
+    margin-top: 92px;
+}
+
+.grade-content-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.grade-post {
+    width: 100%;
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: 0.5s;
+}
+
+.grade-post:hover {
+    box-shadow: 0 0 20px gray;
+}
+
+.grade-shadow {
+    box-shadow: 0px -84px 41px -11px white;
+    height: 0;
+    overflow: hidden;
+}
+
+.grade-btn {
+    width: 93px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: #00a888;
+    height: 27px;
+    color: #00a888;
+    font-family: Roboto-Regular;
+    font-size: 13px;
+    line-height: 27px;
+    justify-items: center;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.grade-btn:hover {
+    background-color: #00a888;
+    color: white;
+}
+
+.grade-circle {
+    width: 30px;
+    height: 30px;
+    border-width: 0px;
+    border-radius: 15px;
+    background-color: white;
+    margin: 3.5px;
+    font-family: Roboto-Regular;
+    font-size: 15px;
+    display: none;
+    line-height: 30px;
+    justify-items: center;
+    text-align: center;
+    transition: 0.5s;
+    margin-bottom: 63px;
+}
+
+.grade-circle:hover {
+    background-color: #ffaa00;
+    color: white;
+}
+
+.grade-header {
+    height: 100px;
+    width: 100%;
+    background: url('../images/lop9/lop9_background.png') center center;
+    background-repeat: repeat;
+}
+
+.grade-header-frame {
+    width: 100%;
+    max-width: 1140px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+}
+
+.grade-header-path {
+    position: absolute;
+    top: 15px;
+    left: 0px;
+    font-family: Roboto-Regular;
+    font-size: 13px;
+    text-transform: uppercase;
+    width: fit-content;
+    color: white;
+}
+
+.grade-frame-center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.grade-circle-big {
+    position: absolute;
+    width: 251px;
+    height: 251px;
+    background-color: rgba(f, f, f, 0.2);
+}
+
+.grade-circle-small {
+    width: 170px;
+    height: 170px;
+    background-color: rgba(f, f, f, 0.6);
+}
+
+.grade-header-text {
+    font-family: Roboto-Bold;
+    font-size: 30px;
+    color: white;
+    text-transform: uppercase;
+}
 /* ========================flex======================= */
 .flex-row-nowrap {
     display: flex;
@@ -552,7 +722,7 @@ img { object-fit: contain; }
 }
 
 @media only screen and (max-width: 750px) {
-    /* Header */
+    /* =================Header==================== */
     .mainpage-menuheader{
         display: none;
         height: 0px;
@@ -572,6 +742,14 @@ img { object-fit: contain; }
 
     .icon-expand-container {
         height: 53px;
+    }
+
+    #icon-expand {
+        display: block;
+    }
+
+    #icon-expand-web {
+        display: none;
     }
 
     .text-expand {
@@ -613,5 +791,22 @@ img { object-fit: contain; }
 
     .colcontent {
         width: 80%;
+    }
+
+    /* ==================Lop 9================= */
+    .grade-content-flex { flex-wrap: wrap; }
+
+    .grade-advertisement {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .grade-content { width: 100%; }
+
+    .grade-post {
+        /* margin: 0 10px; */
     }
 }
