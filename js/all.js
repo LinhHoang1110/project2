@@ -15,7 +15,6 @@ window.addEventListener('load', function(ev){
         document.getElementById('sidebar').style.transform = 'translateX(0)';
         document.getElementById('sidebar-blur').style.transform = 'translateX(0)';
         document.getElementById('icon-close').onclick = function(){
-            console.log(1);
             document.getElementById('sidebar').style.transform = 'translateX(-100%)';
             document.getElementById('sidebar-blur').style.transform = 'translateX(-100%)';
         }
@@ -33,8 +32,19 @@ function expandSideMenu(des){
     }
 
     document.getElementById(des + '-sidebar-class-subject').style.height = ( document.getElementById(des + '-sidebar-class-subject').childElementCount * 37 - 2 ) + 'px';
-    document.getElementById(des).classList.remove('fa-plus-circle');
-    document.getElementById(des).classList.add('fa-minus-circle');
+    var desElement = document.getElementById(des);
+    desElement.classList.remove('fa-plus-circle');
+    desElement.classList.add('fa-minus-circle');
+
+    desElement.addEventListener('click', function(){
+        desElement.classList.remove('fa-minus-circle');
+        desElement.classList.add('fa-plus-circle');
+        document.getElementById(des + '-sidebar-class-subject').style.height = 0;
+        sidebar.current = 0;
+        document.getElementById(des).addEventListener('click', function(){
+            expandSideMenu(des);
+        });
+    })
 
     sidebar.current = des;
 }

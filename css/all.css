@@ -309,21 +309,22 @@ button {
 .sidebar {
     z-index: 1005;
     position: fixed;
-    width: 100%;
+    width: 70%;
     /* background-color: #ff9900; */
     top: 0px;
     transform: translateX(-100%);
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     overflow: scroll;
-    max-height: 100%;
+    height: 100%;
+    background-color: #FFAD09;
 }
 
 .sidebar-blur {
+    z-index: 1001;
     position: fixed;
     top: 0;
     width: 100%;
     height: 100%;
-    z-index: 900;
     transform: translateX(-100%);
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     background: rgba(0, 0, 0, 0.5);
@@ -335,7 +336,7 @@ button {
     border-top-width: 1px;
     height: 40px;
     position: relative;
-    background-color: #ff9900;
+    background-color: #FFAD09;
     overflow: auto;
     transition: all 1s;
 }
@@ -368,7 +369,7 @@ button {
 
 .sidebar-class-subject {
     width: 100%;
-    background-color: #f6b85b;
+    background-color: #F6B850;
     transition: height 1s, transform 1s;
     overflow: hidden;
     height: 0;
@@ -651,17 +652,30 @@ button {
     justify-content: center;
 }
 
+.grade-circle-big, .grade-circle-small {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
 .grade-circle-big {
+    border-width: 0px;
+    border-radius: 150px;
     position: absolute;
     width: 251px;
     height: 251px;
-    background-color: rgba(f, f, f, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .grade-circle-small {
+    border-width: 0px;
+    border-radius: 100px;
+    position: absolute;
     width: 170px;
     height: 170px;
-    background-color: rgba(f, f, f, 0.6);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .grade-header-text {
