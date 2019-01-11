@@ -138,6 +138,13 @@ button {
     transition: 1s;
 }
 
+.blur-content {
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 90%);
+    -webkit-mask-size: 100% 95%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: left top, left bottom;
+}
+
 .post {
     width: 44.5%;
     background-color: white;
@@ -162,6 +169,7 @@ button {
     font-size: 12px;
     float: left;
     color: #00a888;
+    cursor: pointer;
 }
 
 .post-statistic {
@@ -185,6 +193,8 @@ button {
     font-family: Roboto-Regular;
     font-size: 13px;
     text-align: justify;
+    max-height: 45px;
+    overflow: hidden;
 }
 
 .the12th, .the11th, .the10th, .the9th, .the8th, .the7th, .the6th, .the5th {
@@ -542,6 +552,37 @@ button {
     margin-top: 45px;
 }
 
+.mainpage-tab {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 44px;
+    left: 120px;
+}
+
+.tab-subject {
+    width: 68px;
+    height: 23px;
+    line-height: 23px;
+    justify-items: center;
+    text-align: center;
+    border-style: solid;
+    border-color: #00a888;
+    border-width: 1px;
+    border-radius: 15px;
+    margin: 2.5px;
+    font-family: Roboto-Regular;
+    font-size: 12px;
+    color: #00a888;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.tab-subject:hover {
+    color: white;
+    background-color: #00a888;
+}
+
 /* ===========================Lop 9============================== */
 .grade-news {
     width: 100%;
@@ -620,9 +661,15 @@ button {
     text-align: center;
     transition: 0.5s;
     margin-bottom: 63px;
+    cursor: pointer;
 }
 
 .grade-circle:hover {
+    background-color: #ffaa00;
+    color: white;
+}
+
+.grade-circle-active {
     background-color: #ffaa00;
     color: white;
 }
@@ -715,6 +762,7 @@ button {
     float: left;
     line-height: 50px;
     justify-items: center;
+    cursor: pointer;
 }
 
 .detail-statistic {
@@ -971,6 +1019,10 @@ h3 {
         transition: 0.5s;
         outline-style: none;
         padding: 0 0 0 30px;
+    }
+
+    .mainpage-tab {
+        display: none;
     }
 }
 

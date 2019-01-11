@@ -65,6 +65,7 @@ var sv = ''
 
 window.addEventListener('load', function(){
     document.getElementById('expand-sv').addEventListener('click', function(){
+        document.getElementsByClassName('blur-content')[0].classList.remove('blur-content');
         var news_content = document.getElementById('sv-grade-news-content');
         news_content.style.height = news_content.style.height;
         news_content.innerHTML += sv;
