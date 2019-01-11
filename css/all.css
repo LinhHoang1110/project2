@@ -670,6 +670,63 @@ button {
     color: white;
     text-transform: uppercase;
 }
+
+/* ===========================Detail======================= */
+.detail-content-header {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    justify-items: center;
+    background-color: white;
+}
+
+.detail-author {
+    font-family: Roboto-Medium;
+    font-size: 12px;
+    float: left;
+    color: #00a888;
+    width: fit-content;
+    float: left;
+    line-height: 50px;
+    justify-items: center;
+}
+
+.detail-statistic {
+    float: right;
+    font-family: Roboto-Regular;
+    font-size: 13px;
+    float: right;
+    width: fit-content;
+    line-height: 50px;
+    justify-items: center;
+}
+
+.detail-content-text-header {
+    font-family: Roboto-Bold;
+    font-size: 17px;
+    text-indent: 40px;
+    text-align: justify;
+}
+
+p {
+    font-family: Roboto-Regular;
+    font-size: 15px;
+    text-indent: 40px;
+    text-align: justify;
+}
+
+h3 {
+    margin: 5px 0;
+}
+
+.detail-content-text {
+    padding: 45px 70px;
+}
+
+.detail-cmtfb {
+    
+}
+
 /* ========================flex======================= */
 .flex-row-nowrap {
     display: flex;
