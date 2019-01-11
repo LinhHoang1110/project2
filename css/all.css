@@ -1,4 +1,4 @@
-body { margin: 0; background-color: #f1f1f1; cursor: default; }
+body { margin: 0; background-color: #f1f1f1; }
 
 .frame {
     width: 100%;
@@ -721,12 +721,48 @@ h3 {
 
 .detail-content-text {
     padding: 45px 70px;
+    background-color: white;
+    margin-top: 1px;
 }
 
 .detail-cmtfb {
-    
+    padding: 20px;
 }
 
+.detail-related {
+    position: relative;
+    font-family: Roboto-Medium;
+    font-size: 17px;
+    color: #333333;
+    height: 65px;
+}
+
+.detail-related-cat {
+    width: 100%;
+}
+
+.detail-related-link {
+    font-family: Roboto-Regular;
+    margin: 7px 0;
+}
+
+.a-link-detail {
+    cursor: pointer;
+    font-size: 15px;
+    color: #00a888;
+    text-decoration: none;
+}
+
+.detail-content {
+    width: 70%;
+    margin-top: 45px;
+}
+
+.detail-advertisement {
+    width: 300px;
+    margin-left: 32px;
+    margin-top: 45px;
+}
 /* ========================flex======================= */
 .flex-row-nowrap {
     display: flex;
@@ -775,6 +811,10 @@ h3 {
 
     .colcontent  {
         width: 32%;
+    }
+
+    .detail-content-text {
+        padding: 25px 30px;
     }
 }
 
@@ -865,5 +905,28 @@ h3 {
 
     .grade-post {
         /* margin: 0 10px; */
+    }
+
+    /* ========================Detail===================== */
+    .detail-advertisement {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        margin: 0;
+        flex-wrap: wrap;
+    }
+
+    .detail-content { width: 100%; }
+}
+
+@media only screen and (max-width: 600px) {
+    /* ================Detail==================== */
+    .grade-header {
+        height: 200px;
+    }
+
+    .grade-header-text {
+        text-align: center;
     }
 }
