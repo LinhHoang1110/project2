@@ -14,6 +14,7 @@ img { object-fit: contain; }
 
 button {
     padding: 0;
+    background-color: white;
 }
 
 /* =======================header============================ */
@@ -143,6 +144,7 @@ button {
     padding: 25px;
     margin-bottom: 25px;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .post:hover {
@@ -230,6 +232,7 @@ button {
     height: 0;
     overflow: hidden;
     transition: all 1s;
+    z-index: 202;
 }
 
 .number {
@@ -429,6 +432,12 @@ button {
     color: #828994;
     margin-top: 30px;
     margin-bottom: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.footer-text:hover {
+    color: white;
 }
 
 .footer-copyright {
@@ -562,6 +571,7 @@ button {
     padding: 25px;
     margin-bottom: 25px;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .grade-post:hover {
@@ -661,6 +671,7 @@ button {
 }
 
 .grade-circle-big {
+    z-index: 200;
     border-width: 0px;
     border-radius: 150px;
     position: absolute;
@@ -670,6 +681,7 @@ button {
 }
 
 .grade-circle-small {
+    z-index: 201;
     border-width: 0px;
     border-radius: 100px;
     position: absolute;
@@ -765,6 +777,11 @@ h3 {
     font-size: 15px;
     color: #00a888;
     text-decoration: none;
+    transition: 0.5s;
+}
+
+.a-link-detail:hover {
+    color: #FFAD09;
 }
 
 .detail-content {
@@ -849,6 +866,11 @@ h3 {
         height: 53px;
         width: 100%;
         background-color: white;
+    }
+
+    .header-input:focus {
+        outline-style: none;
+        padding: 0 0 0 30px;
     }
 
     .icon-expand-container {
@@ -942,5 +964,37 @@ h3 {
 
     .grade-header-text {
         text-align: center;
+    }
+
+    .header-input:focus {
+        width: 250px;
+        transition: 0.5s;
+        outline-style: none;
+        padding: 0 0 0 30px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .header-input:focus {
+        width: 200px;
+        transition: 0.5s;
+        outline-style: none;
+        padding: 0 0 0 30px;
+    }
+}
+
+@media only screen and (max-width: 405px) {
+    .header-input:focus {
+        width: 150px;
+        transition: 0.5s;
+        outline-style: none;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .header-input:focus {
+        width: 100px;
+        transition: 0.5s;
+        outline-style: none;
     }
 }
