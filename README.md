@@ -28,3 +28,8 @@ Thực hiện bởi [Nguyễn Tiến Mạnh](https://github.com/tienmanh2208)
 [Layout lớp 9 (images)](https://tienmanh2208.github.io/project2/images/lop9.png)
 
 ## Link bài làm Yêu cầu 4
+[Trang chủ](https://tienmanh2208.github.io/project2/trangchu.html)
+
+[Chi tiết](https://tienmanh2208.github.io/project2/detail.html)
+
+[Lớp 9](https://tienmanh2208.github.io/project2/lop9.html)
