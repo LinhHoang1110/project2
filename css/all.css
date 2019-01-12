@@ -10,7 +10,7 @@ body { margin: 0; background-color: #f1f1f1; }
     border-color: black;
 }
 
-img { object-fit: contain; }
+img { object-fit: contain; transition: 1s;}
 
 button {
     padding: 0;
@@ -518,6 +518,16 @@ button {
     width: 30%;
     text-align: center;
     margin-top: 55px;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.colcontent:hover {
+    color: #FFAD09;
+}
+
+.colcontent:hover .colcontent-img {
+    transform: scale(1.3)
 }
 
 .mainpage-menucontent {
