@@ -318,7 +318,7 @@ button {
     height: 98%;
 } */
 
-/* =================================side bar================================= */
+/* =================================sidebar================================= */
 .sidebar {
     z-index: 1005;
     position: fixed;
@@ -947,6 +947,14 @@ h3 {
 
     .detail-content-text {
         padding: 25px 30px;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar-blur {
+        transform: translateX(-100%);
     }
 }
 
