@@ -16,6 +16,12 @@ window.addEventListener('load', function(ev){
 
     // document.getElementById('header-input').style.width = 150px;
 })
+window.addEventListener('resize', function(){
+    if(document.body.clientWidth > 732) {
+        document.getElementById('sidebar').style.transform = 'translateX(-100%)';
+        document.getElementById('sidebar-blur').style.transform = 'translateX(-100%)';
+    }
+})
 
 function expandSideMenu(des){
     if(sidebar.current !== 0) {
