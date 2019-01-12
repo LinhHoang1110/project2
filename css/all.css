@@ -510,7 +510,7 @@ button {
     color: #00a888;
     position: absolute;
     right: 10px;
-    bottom: 38px;
+    bottom: 46px;
     cursor: pointer;
 }
 
@@ -560,7 +560,7 @@ button {
     left: 120px;
 }
 
-.tab-subject {
+.tab-subject, .tab-subject-active {
     width: 68px;
     height: 23px;
     line-height: 23px;
@@ -573,9 +573,18 @@ button {
     margin: 2.5px;
     font-family: Roboto-Regular;
     font-size: 12px;
-    color: #00a888;
     transition: 0.5s;
     cursor: pointer;
+    overflow: hidden;
+}
+
+.tab-subject {
+    color: #00a888;
+}
+
+.tab-subject-active {
+    background-color: #00a888;
+    color: white;
 }
 
 .tab-subject:hover {
@@ -724,7 +733,7 @@ button {
     position: absolute;
     width: 251px;
     height: 251px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 .grade-circle-small {
@@ -734,7 +743,7 @@ button {
     position: absolute;
     width: 170px;
     height: 170px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 .grade-header-text {
@@ -801,6 +810,8 @@ h3 {
 
 .detail-cmtfb {
     padding: 20px;
+    background-color: white;
+    margin-top: 20px;
 }
 
 .detail-related {
@@ -1021,9 +1032,13 @@ h3 {
         padding: 0 0 0 30px;
     }
 
-    .mainpage-tab {
-        display: none;
+    .tab-subject {
+        width: 0px;
+        border-width: 0px;
+        margin: 0;
     }
+
+    .mainpage-tab { left: 100px; }
 }
 
 @media only screen and (max-width: 500px) {
