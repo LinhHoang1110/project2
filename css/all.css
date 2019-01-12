@@ -718,15 +718,47 @@ button {
     justify-content: center;
 }
 
-.grade-circle-big, .grade-circle-small {
+.grade-header-text::before {
+    content: '';
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
+    z-index: 200;
+    border-width: 0px;
+    border-radius: 150px;
+    position: absolute;
+    width: 251px;
+    height: 251px;
+    background-color: rgba(255, 255, 255, 0.15);    
 }
 
-.grade-circle-big {
+.grade-header-text::after {
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 201;
+    border-width: 0px;
+    border-radius: 100px;
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* .grade-circle-big, .grade-circle-small {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+} */
+
+/* .grade-circle-big {
     z-index: 200;
     border-width: 0px;
     border-radius: 150px;
@@ -744,7 +776,7 @@ button {
     width: 170px;
     height: 170px;
     background-color: rgba(255, 255, 255, 0.15);
-}
+} */
 
 .grade-header-text {
     font-family: Roboto-Bold;
@@ -999,7 +1031,7 @@ h3 {
     .grade-content { width: 100%; }
 
     .grade-post {
-        /* margin: 0 10px; */
+        margin: 0px 10px 25px 10px;
     }
 
     /* ========================Detail===================== */
