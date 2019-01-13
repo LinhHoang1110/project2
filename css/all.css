@@ -17,6 +17,33 @@ button {
     background-color: white;
 }
 
+.scroll-top {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 10px;
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: gray;
+}
+
+.scroll-top:hover {
+    opacity: 1;
+}
+
+.scroll-top-icon {
+    animation: pulse 2s infinite;
+    -webkit-animation: pulse 2s infinite;
+}
+
 /* =======================header============================ */
 .menuheader, .mainpage-menuheader {
     width: 100%;
@@ -70,6 +97,10 @@ button {
     border-radius: 10px;
     background-color: #e8ecf3;
     transition: 0.5s;
+    font-family: Roboto-Regular;
+    font-size: 12px;
+    line-height: 36px;
+    justify-items: center;
 }
 
 .header-input:focus {
@@ -177,6 +208,7 @@ button {
     float: right;
     font-family: Roboto-Regular;
     font-size: 13px;
+    color: #999999;
 }
 
 .post-like {
@@ -193,8 +225,10 @@ button {
     font-family: Roboto-Regular;
     font-size: 13px;
     text-align: justify;
-    max-height: 45px;
+    max-height: 51px;
     overflow: hidden;
+    line-height: 17px;
+    justify-items: center;
 }
 
 .the12th, .the11th, .the10th, .the9th, .the8th, .the7th, .the6th, .the5th {
@@ -326,10 +360,10 @@ button {
     /* background-color: #ff9900; */
     top: 0px;
     transform: translateX(-100%);
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 0.75s ease;
     overflow: scroll;
     height: 100%;
-    background-color: #FFAD09;
+    background-color: white;
 }
 
 .sidebar-blur {
@@ -339,17 +373,17 @@ button {
     width: 100%;
     height: 100%;
     transform: translateX(-100%);
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 0.75s ease;
     background: rgba(0, 0, 0, 0.5);
 }
 
 .sidebar-class-container {
     border-top-style: solid;
-    border-top-color: #ffad33;
+    border-top-color: orange;
     border-top-width: 1px;
     height: 40px;
     position: relative;
-    background-color: #FFAD09;
+    background-color: white;
     overflow: auto;
     transition: all 1s;
 }
@@ -366,24 +400,24 @@ button {
     padding: 0 65px;
     font-family: Roboto-Medium;
     font-size: 15px;
-    color: white;
+    color: #00a888;
     height: 100%;
 }
 
 .sidebar-icon-filter {
     font-size: 15px;
-    color: #7088a9;
+    color: #00a888;
 }
 
 .sidebar-icon-plus {
     font-size: 20px;
-    color: #7088a9;
+    color: #00a888;
 }
 
 .sidebar-class-subject {
     width: 100%;
-    background-color: #F6B850;
-    transition: height 1s, transform 1s;
+    background-color: white;
+    transition: height 0.5s, transform 0.5s;
     overflow: hidden;
     height: 0;
 }
@@ -394,7 +428,7 @@ button {
     height: 35px;
     font-size: 13px;
     font-family: Roboto-Regular;
-    color: white;
+    color: #00a888;
     border-top-style: solid;
     border-top-color: #ffad33;
     border-top-width: 1px;
@@ -510,7 +544,7 @@ button {
     color: #00a888;
     position: absolute;
     right: 10px;
-    bottom: 46px;
+    bottom: 43px;
     cursor: pointer;
 }
 
@@ -824,13 +858,15 @@ button {
     width: fit-content;
     line-height: 50px;
     justify-items: center;
+    margin-right: 20px;
 }
 
 .detail-content-text-header {
     font-family: Roboto-Bold;
     font-size: 17px;
     text-indent: 40px;
-    text-align: justify;
+    /* text-align: justify; */
+    line-height: 22px;
 }
 
 p {
@@ -838,6 +874,7 @@ p {
     font-size: 15px;
     text-indent: 40px;
     text-align: justify;
+    line-height: 20px;
 }
 
 h3 {
@@ -932,6 +969,14 @@ h3 {
 }
 
 /* =========================responsive=========================== */
+@media only screen and (max-width: 1140px) {
+    .grade-header-path {
+        width: unset;
+        left: 15px;
+        right: 15px;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
     .post {
         width: 43%;
@@ -966,15 +1011,20 @@ h3 {
     }
 
     .menuheader {
-        height: 106px;
+        /* height: 106px; */
         background-color: #ff9900;
         z-index: 1001;
     }
 
+    .mainpage-header {
+        background-color: #ff9900;
+    }
+
     .header-logo {
-        height: 53px;
+        display: none;
+        /* height: 53px;
         width: 100%;
-        background-color: white;
+        background-color: white; */
     }
 
     .header-input:focus {
@@ -1063,6 +1113,21 @@ h3 {
     }
 
     .detail-content { width: 100%; }
+
+    .detail-advertisement-img { display: none; }
+
+    .news-title {
+        font-family: Roboto-Medium;
+        font-size: 20px;
+    }
+
+    .detail-related {
+        font-size: 20px;
+    }
+
+    .detail-advertisement {
+        margin-top: 25px;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -1086,6 +1151,10 @@ h3 {
         width: 0px;
         border-width: 0px;
         margin: 0;
+    }
+
+    .mainpage-tab {
+        display: none;
     }
 
     .mainpage-tab { left: 100px; }
