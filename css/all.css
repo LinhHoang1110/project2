@@ -115,8 +115,16 @@ button {
 }
 
 .icon-expand {
-    width: 20px; height: 20px; float: left; background-color: #e8ecf3; color: #7088a9;
+    width: 20px; height: 20px; float: left; color: white;
     margin-left: 35px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.icon-close {
+    width: 20px; height: 20px; float: left; color: #00a888;
+    margin-left: 35px;
+    font-size: 20px;
     border-radius: 5px;
 }
 
@@ -1064,6 +1072,7 @@ h3 {
 
     .icon-expand-container {
         height: 53px;
+        left: 20px;
     }
 
     #icon-expand {
@@ -1088,7 +1097,7 @@ h3 {
         border-radius: 20px;
         padding: 0 18px;
         background-position-x: 12px;
-        margin-right: 35px;
+        margin-right: 20px;
     }
 
     .post {
