@@ -34,7 +34,6 @@ window.addEventListener('resize', function(){
 })
 
 window.addEventListener('scroll', function(){
-    console.log(window.pageYOffset);
     if(window.pageYOffset != 0) {
         if(!scroll_top) {
             document.getElementsByClassName('scroll-top')[0].style.opacity = 0.3;

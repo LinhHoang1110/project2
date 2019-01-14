@@ -44,6 +44,11 @@ button {
     -webkit-animation: pulse 2s infinite;
 }
 
+.header-path {
+    text-decoration: none;
+    color: white;
+}
+
 /* =======================header============================ */
 .menuheader, .mainpage-menuheader {
     width: 100%;
