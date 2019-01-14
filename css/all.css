@@ -673,6 +673,13 @@ button {
     cursor: pointer;
 }
 
+.grade-post-hidden {
+    height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
 .grade-post:hover {
     box-shadow: 0 0 20px gray;
 }
@@ -834,6 +841,20 @@ button {
     text-transform: uppercase;
 }
 
+.preload-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    background: url('../images/lop9/loader2.gif') center center;
+    opacity: 0;
+    width: 0;
+    transition: 0.5s;
+}
+
+.grade-post-invisible { 
+    opacity: 0;
+    transform: translateY(100px);
+}
 /* ===========================Detail======================= */
 .detail-content-header {
     width: 100%;
@@ -904,6 +925,10 @@ h3 {
     font-size: 17px;
     color: #333333;
     height: 65px;
+}
+
+.detail-related-frame {
+    width: 100%; background-color: white; padding: 0px 25px 13px 25px;
 }
 
 .detail-related-cat {
@@ -1107,6 +1132,14 @@ h3 {
         margin: 0px 10px 25px 10px;
     }
 
+    .above_ {
+        left: 10px;
+    }
+
+    .news-title {
+        left: 10px;
+    }
+
     /* ========================Detail===================== */
     .detail-advertisement {
         display: flex;
@@ -1132,6 +1165,10 @@ h3 {
 
     .detail-advertisement {
         margin-top: 25px;
+    }
+
+    .detail-related-frame {
+        padding: 0px 10px 13px 10px;
     }
 }
 
