@@ -1,0 +1,5 @@
+- ( done ) Chữ ở menu hover nhỏ
+- ( done ) Trên trang chủ bỏ phần banner
+- ( done ) Click vào sidebar blur thì cần tự tắt thông báo
+- ( done ) Làm menu màu mè sinh động hơn
+- Tối ưu pagespeed

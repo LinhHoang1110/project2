@@ -24,6 +24,12 @@ window.addEventListener('load', function(ev){
         // document.documentElement.scrollTop = 0;
         scrollToTop(500);
     })
+
+    document.getElementById('sidebar-blur').addEventListener('click', function(){
+        document.getElementById('sidebar').style.transform = 'translateX(-100%)';
+        document.getElementById('sidebar-blur').style.transform = 'translateX(-100%)';
+        document.getElementsByTagName('body')[0].style.overflow = 'unset';
+    })
 })
 window.addEventListener('resize', function(){
     if(document.body.clientWidth > 732) {

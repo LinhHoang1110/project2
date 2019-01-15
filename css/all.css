@@ -123,7 +123,7 @@ button {
 
 .icon-close {
     width: 20px; height: 20px; float: left; color: #00a888;
-    margin-left: 35px;
+    margin-left: 20px;
     font-size: 20px;
     border-radius: 5px;
 }
@@ -140,6 +140,7 @@ button {
     width: fit-content;
     float: left;
     height: 100%;
+    opacity: 0;
 }
 
 .mainpage-menuheader {
@@ -270,7 +271,7 @@ button {
 
 .subjectcol {
     width: 49%;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .subject {
@@ -392,7 +393,7 @@ button {
 
 .sidebar-class-container {
     border-top-style: solid;
-    border-top-color: orange;
+    border-top-color: #ff9;
     border-top-width: 1px;
     height: 40px;
     position: relative;
@@ -418,8 +419,16 @@ button {
 }
 
 .sidebar-icon-filter {
-    font-size: 15px;
-    color: #00a888;
+    font-size: 12px;
+    color: #ff9900;
+    background-image: radial-gradient(white, #ff9900);
+    border-style: solid;
+    border-radius: 17px;
+    width: 30px;
+    height: 30px;
+    line-height: 25px;
+    text-align: center;
+    border-width: 0px;
 }
 
 .sidebar-icon-plus {
@@ -443,7 +452,7 @@ button {
     font-family: Roboto-Regular;
     color: #00a888;
     border-top-style: solid;
-    border-top-color: #ffad33;
+    border-top-color: #ff9;
     border-top-width: 1px;
     line-height: 35px;
     justify-items: center;
@@ -1077,6 +1086,7 @@ h3 {
 
     #icon-expand {
         display: block;
+        margin-left: 20px;
     }
 
     #icon-expand-web {
@@ -1123,6 +1133,8 @@ h3 {
     .colcontent {
         width: 80%;
     }
+
+    .text-expand { opacity: 1;}
 
     /* ==================Lop 9================= */
     .grade-content-flex { flex-wrap: wrap; }
