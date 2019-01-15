@@ -3,17 +3,21 @@ var sidebar = {
 }
 
 var scroll_top = false;
+var sidebar, sidebar_blur;
 
 window.addEventListener('load', function(ev){
     setActionIconPlus();
 
+    sidebar = document.getElementById('sidebar');
+    sidebar_blur = document.getElementById('sidebar-blur');
+
     document.getElementById('icon-expand').onclick = function(){
-        document.getElementById('sidebar').style.transform = 'translateX(0)';
-        document.getElementById('sidebar-blur').style.transform = 'translateX(0)';
+        sidebar.style.transform = 'translateX(0)';
+        sidebar_blur.style.transform = 'translateX(0)';
         document.getElementsByTagName('body')[0].style.overflow = 'hidden';
         document.getElementById('icon-close').onclick = function(){
-            document.getElementById('sidebar').style.transform = 'translateX(-100%)';
-            document.getElementById('sidebar-blur').style.transform = 'translateX(-100%)';
+            sidebar.style.transform = 'translateX(-100%)';
+            sidebar_blur.style.transform = 'translateX(-100%)';
             document.getElementsByTagName('body')[0].style.overflow = 'unset';
         }
     }
@@ -25,9 +29,9 @@ window.addEventListener('load', function(ev){
         scrollToTop(500);
     })
 
-    document.getElementById('sidebar-blur').addEventListener('click', function(){
-        document.getElementById('sidebar').style.transform = 'translateX(-100%)';
-        document.getElementById('sidebar-blur').style.transform = 'translateX(-100%)';
+    sidebar_blur.addEventListener('click', function(){
+        sidebar.style.transform = 'translateX(-100%)';
+        sidebar_blur.style.transform = 'translateX(-100%)';
         document.getElementsByTagName('body')[0].style.overflow = 'unset';
     })
 })
