@@ -1,4 +1,4 @@
-body { margin: 0; background-color: #f1f1f1; }
+/* body { margin: 0; background-color: #f1f1f1; }
 
 .frame {
     width: 100%;
@@ -47,10 +47,10 @@ button {
 .header-path {
     text-decoration: none;
     color: white;
-}
+} */
 
 /* =======================header============================ */
-.menuheader, .mainpage-menuheader {
+/* .menuheader, .mainpage-menuheader {
     width: 100%;
     position: relative;
     transition: all 1s;
@@ -68,8 +68,6 @@ button {
 
 .mainpage-header {
     height: 53px;
-    /* position: fixed;
-    top: 0; */
     background-color: white;
     z-index: 800;
 }
@@ -147,7 +145,6 @@ button {
     background-color: #ff9900;
     height: 45px;
     transition: 0.5s;
-    /* margin-top: 53px; */
 }
 
 .colmenu {
@@ -179,7 +176,6 @@ button {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* overflow: hidden; */
     transition: 1s;
 }
 
@@ -301,10 +297,6 @@ button {
     height: 70px;
 }
 
-/* .the12th, .the11th, .the10th, .the9th, .the8th, .the7th, .the6th, .the5th, .the4th, .the3rd, .the2nd, .the1st {
-    visibility: hidden;
-} */
-
 .number-border {
 	position: absolute;
     width: 0;
@@ -346,7 +338,6 @@ button {
     border-radius: 15px;
     border-width: 1px;
     border-color: #ff9900;
-    /* transition: 0.5s ease; */
 }
 
 .background-blur {
@@ -356,22 +347,13 @@ button {
     z-index: 200;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    /* display: none; */
-}
-
-/* .background-blur-top {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    height: 98%;
 } */
 
 /* =================================sidebar================================= */
-.sidebar {
+/* .sidebar {
     z-index: 1005;
     position: fixed;
     width: 70%;
-    /* background-color: #ff9900; */
     top: 0px;
     transform: translateX(-100%);
     transition: all 0.75s ease;
@@ -457,7 +439,7 @@ button {
     line-height: 35px;
     justify-items: center;
     transition: all 1s;
-}
+} */
 
 /* ================================footer=============================== */
 .frame-mainpage-footer {
