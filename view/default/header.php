@@ -39,342 +39,65 @@
     </div>
     <div class="mainpage-menuheader">
         <div class="menu-header flex-row-nowrap" style="z-index: 502;">
-            <div class="colmenu">
-                <div class="class">Lớp 12</div>
-                <div class="the12th boardsubject">
-                    <div class="subjectall">
-                        <div class="subjectcol">
-                            <div class="subject">Toán học</div>
-                            <div class="subject">Văn học</div>
-                            <div class="subject">Tiếng anh</div>
-                            <div class="subject">Lịch sử</div>
-                            <div class="subject">Địa lý</div>
-                            <div class="subject">Vật lý</div>
-                            <div class="subject">Sinh học</div>
-                        </div>
-                        <div class="subjectcol">
-                            <div class="subject">Soạn văn</div>
-                            <div class="subject">Văn mẫu</div>
-                            <div class="subject">Tiếng việt</div>
-                            <div class="subject">Đề thi</div>
-                        </div>
-                        <div class="number" style="position: absolute;">
-                            <div class="number12-container">
-                                <div class="number-border"></div>
-                                <div class="number12-text">12</div>
+            <?php
+            $header_data = file_get_contents('./../data/navbar.json');
+            $header_class = json_decode($header_data);
+            $quantity_class = count($header_class);
+            for ($i = $quantity_class - 1; $i >= 0; --$i) {
+                echo '
+                    <div class="colmenu">
+                        <div class="class">Lớp ' . ($i + 1) . '</div>
+                        <div class="the' . generateClassName($i + 1) . ' boardsubject">
+                            <div class="subjectall">
+                                '.generateColumnOfSubject($header_class[$i]->subject).'
+                                <div class="number" style="position: absolute;">
+                                    <div class="number12-container">
+                                        <div class="number-border"></div>
+                                        <div class="number'.($i+1).'-text">'.($i+1).'</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="colmenu">
-                <div class="class">Lớp 11</div>
-                <div class="the11th boardsubject">
-                    <div class="subjectall">
-                        <div class="subjectcol">
-                            <div class="subject">Toán học</div>
-                            <div class="subject">Văn học</div>
-                            <div class="subject">Tiếng anh</div>
-                            <div class="subject">Lịch sử</div>
-                            <div class="subject">Địa lý</div>
-                            <div class="subject">Vật lý</div>
-                            <div class="subject">Sinh học</div>
-                        </div>
-                        <div class="subjectcol">
-                            <div class="subject">Soạn văn</div>
-                            <div class="subject">Văn mẫu</div>
-                            <div class="subject">Tiếng việt</div>
-                            <div class="subject">Đề thi</div>
-                        </div>
-                        <div class="number" style="position: absolute;">
-                            <div class="number12-container">
-                                <div class="number-border"></div>
-                                <div class="number11-text">11</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="colmenu">
-                <div class="class">Lớp 10</div>
-                <div class="the10th boardsubject">
-                    <div class="subjectall">
-                        <div class="subjectcol">
-                            <div class="subject">Toán học</div>
-                            <div class="subject">Văn học</div>
-                            <div class="subject">Tiếng anh</div>
-                            <div class="subject">Lịch sử</div>
-                            <div class="subject">Địa lý</div>
-                            <div class="subject">Vật lý</div>
-                            <div class="subject">Sinh học</div>
-                        </div>
-                        <div class="subjectcol">
-                            <div class="subject">Soạn văn</div>
-                            <div class="subject">Văn mẫu</div>
-                            <div class="subject">Tiếng việt</div>
-                            <div class="subject">Đề thi</div>
-                        </div>
-                        <div class="number" style="position: absolute;">
-                            <div class="number12-container">
-                                <div class="number-border"></div>
-                                <div class="number10-text">10</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="colmenu">
-                <div class="class">Lớp 9</div>
-                <div class="the9th boardsubject">
-                    <div class="subjectall">
-                        <div class="subjectcol">
-                            <div class="subject">Toán học</div>
-                            <div class="subject">Văn học</div>
-                            <div class="subject">Tiếng anh</div>
-                            <div class="subject">Lịch sử</div>
-                            <div class="subject">Địa lý</div>
-                            <div class="subject">Vật lý</div>
-                            <div class="subject">Sinh học</div>
-                        </div>
-                        <div class="subjectcol">
-                            <div class="subject">Soạn văn</div>
-                            <div class="subject">Văn mẫu</div>
-                            <div class="subject">Tiếng việt</div>
-                            <div class="subject">Đề thi</div>
-                        </div>
-                        <div class="number" style="position: absolute;">
-                            <div class="number12-container">
-                                <div class="number-border"></div>
-                                <div class="number9-text">9</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="colmenu">
-                <div class="class">Lớp 8</div>
-                <div class="the8th boardsubject">
-                    <div class="subjectall">
-                        <div class="subjectcol">
-                            <div class="subject">Toán học</div>
-                            <div class="subject">Văn học</div>
-                            <div class="subject">Tiếng anh</div>
-                            <div class="subject">Lịch sử</div>
-                            <div class="subject">Địa lý</div>
-                            <div class="subject">Vật lý</div>
-                            <div class="subject">Sinh học</div>
-                        </div>
-                        <div class="subjectcol">
-                            <div class="subject">Soạn văn</div>
-                            <div class="subject">Văn mẫu</div>
-                            <div class="subject">Tiếng việt</div>
-                            <div class="subject">Đề thi</div>
-                        </div>
-                        <div class="number" style="position: absolute;">
-                            <div class="number12-container">
-                                <div class="number-border"></div>
-                                <div class="number8-text">8</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="colmenu">
-                <div class="class">Lớp 7</div>
-                <div class="the7th boardsubject">
-                    <div class="subjectall">
-                        <div class="subjectcol">
-                            <div class="subject">Toán học</div>
-                            <div class="subject">Văn học</div>
-                            <div class="subject">Tiếng anh</div>
-                            <div class="subject">Lịch sử</div>
-                            <div class="subject">Địa lý</div>
-                            <div class="subject">Vật lý</div>
-                            <div class="subject">Sinh học</div>
-                        </div>
-                        <div class="subjectcol">
-                            <div class="subject">Soạn văn</div>
-                            <div class="subject">Văn mẫu</div>
-                            <div class="subject">Tiếng việt</div>
-                            <div class="subject">Đề thi</div>
-                        </div>
-                        <div class="number" style="position: absolute;">
-                            <div class="number12-container">
-                                <div class="number-border"></div>
-                                <div class="number7-text">7</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="colmenu">
-                <div class="class">Lớp 6</div>
-                <div class="the6th boardsubject">
-                    <div class="subjectall">
-                        <div class="subjectcol">
-                            <div class="subject">Toán học</div>
-                            <div class="subject">Văn học</div>
-                            <div class="subject">Tiếng anh</div>
-                            <div class="subject">Lịch sử</div>
-                            <div class="subject">Địa lý</div>
-                            <div class="subject">Vật lý</div>
-                            <div class="subject">Sinh học</div>
-                        </div>
-                        <div class="subjectcol">
-                            <div class="subject">Soạn văn</div>
-                            <div class="subject">Văn mẫu</div>
-                            <div class="subject">Tiếng việt</div>
-                            <div class="subject">Đề thi</div>
-                        </div>
-                        <div class="number" style="position: absolute;">
-                            <div class="number12-container">
-                                <div class="number-border"></div>
-                                <div class="number6-text">6</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="colmenu">
-                <div class="class">Lớp 5</div>
-                <div class="the5th boardsubject">
-                    <div class="subjectall">
-                        <div class="subjectcol">
-                            <div class="subject">Toán học</div>
-                            <div class="subject">Văn học</div>
-                            <div class="subject">Tiếng anh</div>
-                            <div class="subject">Lịch sử</div>
-                            <div class="subject">Địa lý</div>
-                            <div class="subject">Vật lý</div>
-                            <div class="subject">Sinh học</div>
-                        </div>
-                        <div class="subjectcol">
-                            <div class="subject">Soạn văn</div>
-                            <div class="subject">Văn mẫu</div>
-                            <div class="subject">Tiếng việt</div>
-                            <div class="subject">Đề thi</div>
-                        </div>
-                        <div class="number" style="position: absolute;">
-                            <div class="number12-container">
-                                <div class="number-border"></div>
-                                <div class="number5-text">5</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="colmenu">
-                <div class="class">Lớp 4</div>
-                <div class="the4th boardsubject">
-                    <div class="subjectall">
-                        <div class="subjectcol">
-                            <div class="subject">Toán học</div>
-                            <div class="subject">Văn học</div>
-                            <div class="subject">Tiếng anh</div>
-                            <div class="subject">Lịch sử</div>
-                            <div class="subject">Địa lý</div>
-                            <div class="subject">Vật lý</div>
-                            <div class="subject">Sinh học</div>
-                        </div>
-                        <div class="subjectcol">
-                            <div class="subject">Soạn văn</div>
-                            <div class="subject">Văn mẫu</div>
-                            <div class="subject">Tiếng việt</div>
-                            <div class="subject">Đề thi</div>
-                        </div>
-                        <div class="number" style="position: absolute;">
-                            <div class="number12-container">
-                                <div class="number-border"></div>
-                                <div class="number4-text">4</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="colmenu">
-                <div class="class">Lớp 3</div>
-                <div class="the3rd boardsubject">
-                    <div class="subjectall">
-                        <div class="subjectcol">
-                            <div class="subject">Toán học</div>
-                            <div class="subject">Văn học</div>
-                            <div class="subject">Tiếng anh</div>
-                            <div class="subject">Lịch sử</div>
-                            <div class="subject">Địa lý</div>
-                            <div class="subject">Vật lý</div>
-                            <div class="subject">Sinh học</div>
-                        </div>
-                        <div class="subjectcol">
-                            <div class="subject">Soạn văn</div>
-                            <div class="subject">Văn mẫu</div>
-                            <div class="subject">Tiếng việt</div>
-                            <div class="subject">Đề thi</div>
-                        </div>
-                        <div class="number" style="position: absolute;">
-                            <div class="number12-container">
-                                <div class="number-border"></div>
-                                <div class="number3-text">3</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="colmenu">
-                <div class="class">Lớp 2</div>
-                <div class="the2nd boardsubject">
-                    <div class="subjectall">
-                        <div class="subjectcol">
-                            <div class="subject">Toán học</div>
-                            <div class="subject">Văn học</div>
-                            <div class="subject">Tiếng anh</div>
-                            <div class="subject">Lịch sử</div>
-                            <div class="subject">Địa lý</div>
-                            <div class="subject">Vật lý</div>
-                            <div class="subject">Sinh học</div>
-                        </div>
-                        <div class="subjectcol">
-                            <div class="subject">Soạn văn</div>
-                            <div class="subject">Văn mẫu</div>
-                            <div class="subject">Tiếng việt</div>
-                            <div class="subject">Đề thi</div>
-                        </div>
-                        <div class="number" style="position: absolute;">
-                            <div class="number12-container">
-                                <div class="number-border"></div>
-                                <div class="number2-text">2</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="colmenu">
-                <div class="class">Lớp 1</div>
-                <div class="the1st boardsubject">
-                    <div class="subjectall">
-                        <div class="subjectcol">
-                            <div class="subject">Toán học</div>
-                            <div class="subject">Văn học</div>
-                            <div class="subject">Tiếng anh</div>
-                            <div class="subject">Lịch sử</div>
-                            <div class="subject">Địa lý</div>
-                            <div class="subject">Vật lý</div>
-                            <div class="subject">Sinh học</div>
-                        </div>
-                        <div class="subjectcol">
-                            <div class="subject">Soạn văn</div>
-                            <div class="subject">Văn mẫu</div>
-                            <div class="subject">Tiếng việt</div>
-                            <div class="subject">Đề thi</div>
-                        </div>
-                        <div class="number" style="position: absolute;">
-                            <div class="number12-container">
-                                <div class="number-border"></div>
-                                <div class="number1-text">1</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    ';
+            }
+
+            function generateClassName($class)
+            {
+                if ($class == 1) return '1st';
+                else if ($class == 2) return '2nd';
+                else if ($class == 3) return '3rd';
+                else return $class . 'th';
+            }
+
+            function generateColumnOfSubject($listOfSubject){
+                $returnValue = '';
+                $numberOfSubject = count($listOfSubject);
+                if ($numberOfSubject == 1 || $numberOfSubject == 2 || $numberOfSubject == 3) {
+                    $returnValue .= '<div class="subjectcol">';
+                    for ($j = 0; $j < $numberOfSubject; ++$j) {
+                        $returnValue .= '<div class="subject">'.$listOfSubject[$j].'</div>';
+                    }
+                    $returnValue .= '</div>';
+                } else {
+                    $right = ($numberOfSubject - 3)/2;
+                    $left = $numberOfSubject - $right;
+                    $returnValue .= '<div class="subjectcol">';
+                    for ($j = 0; $j < $left; ++$j) {
+                        $returnValue .= '<div class="subject">' . $listOfSubject[$j] . '</div>';
+                    }
+                    $returnValue .= '</div>';
+                    $returnValue .= '<div class="subjectcol">';
+                    for ($j = $left; $j < $numberOfSubject; ++$j) {
+                        $returnValue .= '<div class="subject">' . $listOfSubject[$j] . '</div>';
+                    }
+                    $returnValue .= '</div>';
+                }
+
+                return $returnValue;
+            }
+
+            ?>
         </div>
         <!-- <div class="background-blur-top"></div> -->
         <!-- <div class="background-blur"></div> -->
