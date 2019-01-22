@@ -7,6 +7,22 @@
  */
 ?>
 
+<?php 
+    $contentData = file_get_contents('./../data/post.json');
+    $contentPost = json_decode($contentData);
+    $listSv = array(); $listTh = array();
+
+    for($i = 0; $i < count($contentPost); ++$i){
+        if($contentPost[$i]->category == "Soạn văn") {
+            $sv++;
+            array_push($listSv, $i);
+        }
+        else if($contentPost[$i]->category == "Toán học") {
+            array_push($listTh, $i);
+        }
+    }
+?>
+
 <div class="grade-content">
     <div class="grade-news" id="sv">
         <div class="mainpage-news-title">
@@ -17,90 +33,25 @@
             <div class="_"></div>
         </div>
         <div class="mainpage-news-content" id="sv-grade-news-content">
-            <div class="grade-post">
-                <div class="post-title">Phân tích đấu tranh cho một thế giới hòa bình</div>
-                <div class="post-author">Nguyễn Công Hoan</div>
-                <div class="post-statistic">
-                    <div class="post-like"><i class="fas fa-heart"
-                                              style="color: #e06666; margin-right: 6px;"></i>96
-                    </div>
-                    <div class="post-view"><i class="far fa-eye" style="color: #6ea3ed; margin-right: 6px;"></i>342
-                    </div>
-                </div>
-                <div class="post-content">Có xu hướng đe dọa các đồng minh lâu năm, nhưng lại gần gũi với kẻ thù
-                    và cự tuyệt mọi lời tư vấn có xu hướng công khai đe dọa các đồng minh lâu năm
-                </div>
-            </div>
-            <div class="grade-post">
-                <div class="post-title">Phân tích đấu tranh cho một thế giới hòa bình</div>
-                <div class="post-author">Nguyễn Công Hoan</div>
-                <div class="post-statistic">
-                    <div class="post-like"><i class="fas fa-heart"
-                                              style="color: #e06666; margin-right: 6px;"></i>96
-                    </div>
-                    <div class="post-view"><i class="far fa-eye" style="color: #6ea3ed; margin-right: 6px;"></i>342
-                    </div>
-                </div>
-                <div class="post-content">Có xu hướng đe dọa các đồng minh lâu năm, nhưng lại gần gũi với kẻ thù
-                    và cự tuyệt mọi lời tư vấn có xu hướng công khai đe dọa các đồng minh lâu năm
-                </div>
-            </div>
-            <div class="grade-post">
-                <div class="post-title">Phân tích đấu tranh cho một thế giới hòa bình</div>
-                <div class="post-author">Nguyễn Công Hoan</div>
-                <div class="post-statistic">
-                    <div class="post-like"><i class="fas fa-heart"
-                                              style="color: #e06666; margin-right: 6px;"></i>96
-                    </div>
-                    <div class="post-view"><i class="far fa-eye" style="color: #6ea3ed; margin-right: 6px;"></i>342
-                    </div>
-                </div>
-                <div class="post-content">Có xu hướng đe dọa các đồng minh lâu năm, nhưng lại gần gũi với kẻ thù
-                    và cự tuyệt mọi lời tư vấn có xu hướng công khai đe dọa các đồng minh lâu năm
-                </div>
-            </div>
-            <div class="grade-post">
-                <div class="post-title">Phân tích đấu tranh cho một thế giới hòa bình</div>
-                <div class="post-author">Nguyễn Công Hoan</div>
-                <div class="post-statistic">
-                    <div class="post-like"><i class="fas fa-heart"
-                                              style="color: #e06666; margin-right: 6px;"></i>96
-                    </div>
-                    <div class="post-view"><i class="far fa-eye" style="color: #6ea3ed; margin-right: 6px;"></i>342
-                    </div>
-                </div>
-                <div class="post-content">Có xu hướng đe dọa các đồng minh lâu năm, nhưng lại gần gũi với kẻ thù
-                    và cự tuyệt mọi lời tư vấn có xu hướng công khai đe dọa các đồng minh lâu năm
-                </div>
-            </div>
-            <div class="grade-post">
-                <div class="post-title">Phân tích đấu tranh cho một thế giới hòa bình</div>
-                <div class="post-author">Nguyễn Công Hoan</div>
-                <div class="post-statistic">
-                    <div class="post-like"><i class="fas fa-heart"
-                                              style="color: #e06666; margin-right: 6px;"></i>96
-                    </div>
-                    <div class="post-view"><i class="far fa-eye" style="color: #6ea3ed; margin-right: 6px;"></i>342
-                    </div>
-                </div>
-                <div class="post-content">Có xu hướng đe dọa các đồng minh lâu năm, nhưng lại gần gũi với kẻ thù
-                    và cự tuyệt mọi lời tư vấn có xu hướng công khai đe dọa các đồng minh lâu năm
-                </div>
-            </div>
-            <div class="grade-post blur-content">
-                <div class="post-title">Phân tích đấu tranh cho một thế giới hòa bình</div>
-                <div class="post-author">Nguyễn Công Hoan</div>
-                <div class="post-statistic">
-                    <div class="post-like"><i class="fas fa-heart"
-                                              style="color: #e06666; margin-right: 6px;"></i>96
-                    </div>
-                    <div class="post-view"><i class="far fa-eye" style="color: #6ea3ed; margin-right: 6px;"></i>342
-                    </div>
-                </div>
-                <div class="post-content">Có xu hướng đe dọa các đồng minh lâu năm, nhưng lại gần gũi với kẻ thù
-                    và cự tuyệt mọi lời tư vấn có xu hướng công khai đe dọa các đồng minh lâu năm
-                </div>
-            </div>
+            <?php
+                $check = false;
+                for($i = 0; $i < count($listSv); ++$i){
+                    if(($i == 5) && ($listSv > 6)) { echo '<div class="grade-post blur-content">'; $check = true; }
+                    else echo '<div class="grade-post">';
+
+                    echo '
+                        <div class="post-title">'.$contentPost[$listSv[$i]]->title.'</div>
+                        <div class="post-author">'.$contentPost[$listSv[$i]]->author.'</div>
+                        <div class="post-statistic">
+                            <div class="post-like"><i class="fas fa-heart" style="color: #e06666; margin-right: 6px;"></i>'.$contentPost[$listSv[$i]]->likes.'</div>
+                            <div class="post-view"><i class="far fa-eye" style="color: #6ea3ed; margin-right: 6px;"></i>'.$contentPost[$listSv[$i]]->views.'</div>
+                        </div>
+                        <div class="post-content">'.$contentPost[$listSv[$i]]->content->content.'</div>
+                        </div>';
+
+                    if($check) break;
+                }
+            ?>
         </div>
         <div class="grade-shadow"></div>
         <div class="flex-row-nowrap">

@@ -17,5 +17,5 @@
 </div>
 </body>
 <script src="./../js/all.js"></script>
-<script src="../js/class.js"></script>
+<script src="./../js/class.js"></script>
 </html>
