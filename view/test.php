@@ -24,41 +24,18 @@ if ($conn->connect_error) {
 } 
 echo "<br/>Connected successfully<br/>";
 
-// $sql = 'insert into navbar ("class", "subject") values (\'11\', \'["Toán học", "Soạn văn","Sinh học"]\' )';
+$sql = 'SELECT * FROM vnpTraining.footer';
+$result = $conn->query($sql);
 
-// if ($conn->query($sql) === TRUE) {
-//     echo "New record created successfully";
-// } else {
-//     echo "Error: " . $sql . "<br>" . $conn->error;
-// }
-class Abc{
-    private $a = 2;
-
-    // public function __construct($a){
-    //     $this->a = $a;
-    // }
-
-    // private function __construct(){
-    //     // never be called
-    // }
-
-    public function doubleA(){
-        echo 2 * 2;
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo $row;
     }
-
-    public function double($A){
-        echo $A * 2;
-    }
+} else {
+    echo "0 results";
 }
-
-Abc::doubleA();
-
-echo '<br/><br/>';
-echo '123<br/>';
-
-$tmp = new ABC();
-$tmp->doubleA();
-
+$conn->close();
 ?>
 </body>
 </html>

@@ -1,21 +1,19 @@
 <?php
-    class database{
-        private $conn;
-        private $servername = "localhost";
-        private $username = "manhnt";
-        private $password = "220897";
-        private $dbname = "vnpTraining";
+//        public function __construct(){
+//            // this function is created to prevent creating new object database
+//        }
 
-        private function __construct(){
-            // this function is created to prevent creating new object database
-        }
+function getConn(){
+    $servername = "localhost";
+    $username = "manhnt";
+    $password = "220897";
+    $dbname = "vnpTraining";
 
-        public static function singleton(){
-            if(!isset(self::$conn)){
-                self::$conn = new mysqli($servername, $username, $password, $dbname);
-            }
-            
-            return $conn;
-        }
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+        return 'error';
     }
+    return $conn;
+}
 ?>
