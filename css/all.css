@@ -441,6 +441,10 @@ button {
     transition: all 1s;
 } */
 
+a {
+    text-decoration: none;
+}
+
 /* ================================footer=============================== */
 .frame-mainpage-footer {
     width: 100%;
@@ -550,6 +554,7 @@ button {
     right: 10px;
     bottom: 43px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .colcontent {
@@ -838,6 +843,7 @@ button {
     font-size: 30px;
     color: white;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .preload-icon {

@@ -5,6 +5,21 @@
  * Date: 16/01/2019
  * Time: 11:02
  */
+
+require_once './../model/post-model.php';
+
+$idpost = $_GET['idpost'];
+$post = getDetailPost($idpost);
+$class = '';
+$subject = '';
+
+while ($row = $post->fetch_assoc()) {
+    $class = $row['class'];
+    $subject = $row['subject'];
+    break;
+}
+
+$listRelevantPost = getListPostWithClassAndSubject($class, $subject);
 ?>
 
 <div class="news" style="margin-bottom: 65px;">
@@ -15,71 +30,37 @@
         <div class="_"></div>
     </div>
     <div class="mainpage-news-content">
-        <div class="post">
-            <div class="post-title">Phân tích đấu tranh cho một thế giới hòa bình</div>
-            <div class="post-author">Nguyễn Công Hoan</div>
-            <div class="post-statistic">
-                <div class="post-like"><i class="fas fa-heart" style="color: #e06666; margin-right: 6px;"></i>96</div>
-                <div class="post-view"><i class="far fa-eye" style="color: #6ea3ed; margin-right: 6px;"></i>342</div>
-            </div>
-            <div class="post-content">Có xu hướng đe dọa các đồng minh lâu năm, nhưng lại gần gũi với kẻ thù và
-                cự tuyệt mọi lời tư vấn có xu hướng công khai đe dọa các đồng minh lâu năm
-            </div>
-        </div>
-        <div class="post">
-            <div class="post-title">Phân tích đấu tranh cho một thế giới hòa bình</div>
-            <div class="post-author">Nguyễn Công Hoan</div>
-            <div class="post-statistic">
-                <div class="post-like"><i class="fas fa-heart" style="color: #e06666; margin-right: 6px;"></i>96</div>
-                <div class="post-view"><i class="far fa-eye" style="color: #6ea3ed; margin-right: 6px;"></i>342</div>
-            </div>
-            <div class="post-content">Có xu hướng đe dọa các đồng minh lâu năm, nhưng lại gần gũi với kẻ thù và
-                cự tuyệt mọi lời tư vấn có xu hướng công khai đe dọa các đồng minh lâu năm
-            </div>
-        </div>
-        <div class="post">
-            <div class="post-title">Phân tích đấu tranh cho một thế giới hòa bình</div>
-            <div class="post-author">Nguyễn Công Hoan</div>
-            <div class="post-statistic">
-                <div class="post-like"><i class="fas fa-heart" style="color: #e06666; margin-right: 6px;"></i>96</div>
-                <div class="post-view"><i class="far fa-eye" style="color: #6ea3ed; margin-right: 6px;"></i>342</div>
-            </div>
-            <div class="post-content">Có xu hướng đe dọa các đồng minh lâu năm, nhưng lại gần gũi với kẻ thù và
-                cự tuyệt mọi lời tư vấn có xu hướng công khai đe dọa các đồng minh lâu năm
-            </div>
-        </div>
-        <div class="post">
-            <div class="post-title">Phân tích đấu tranh cho một thế giới hòa bình</div>
-            <div class="post-author">Nguyễn Công Hoan</div>
-            <div class="post-statistic">
-                <div class="post-like"><i class="fas fa-heart" style="color: #e06666; margin-right: 6px;"></i>96</div>
-                <div class="post-view"><i class="far fa-eye" style="color: #6ea3ed; margin-right: 6px;"></i>342</div>
-            </div>
-            <div class="post-content">Có xu hướng đe dọa các đồng minh lâu năm, nhưng lại gần gũi với kẻ thù và
-                cự tuyệt mọi lời tư vấn có xu hướng công khai đe dọa các đồng minh lâu năm
-            </div>
-        </div>
-        <div class="post">
-            <div class="post-title">Phân tích đấu tranh cho một thế giới hòa bình</div>
-            <div class="post-author">Nguyễn Công Hoan</div>
-            <div class="post-statistic">
-                <div class="post-like"><i class="fas fa-heart" style="color: #e06666; margin-right: 6px;"></i>96</div>
-                <div class="post-view"><i class="far fa-eye" style="color: #6ea3ed; margin-right: 6px;"></i>342</div>
-            </div>
-            <div class="post-content">Có xu hướng đe dọa các đồng minh lâu năm, nhưng lại gần gũi với kẻ thù và
-                cự tuyệt mọi lời tư vấn có xu hướng công khai đe dọa các đồng minh lâu năm
-            </div>
-        </div>
-        <div class="post">
-            <div class="post-title">Phân tích đấu tranh cho một thế giới hòa bình</div>
-            <div class="post-author">Nguyễn Công Hoan</div>
-            <div class="post-statistic">
-                <div class="post-like"><i class="fas fa-heart" style="color: #e06666; margin-right: 6px;"></i>96</div>
-                <div class="post-view"><i class="far fa-eye" style="color: #6ea3ed; margin-right: 6px;"></i>342</div>
-            </div>
-            <div class="post-content">Có xu hướng đe dọa các đồng minh lâu năm, nhưng lại gần gũi với kẻ thù và
-                cự tuyệt mọi lời tư vấn có xu hướng công khai đe dọa các đồng minh lâu năm
-            </div>
-        </div>
+        <?php
+        if ($listRelevantPost == 'error connection') echo 'can not connect to database';
+        else {
+            if ($listRelevantPost->num_rows > 0) {
+                $count = 0;
+                while ($row = $listRelevantPost->fetch_assoc()) {
+                    $count++;
+
+                    if ($count > 6) break;
+
+                    $content = json_decode($row['content']);
+                    $content->content = str_replace("<h3>","", $content->content);
+                    $content->content = str_replace("<p>","", $content->content);
+                    $content->content = str_replace("</h3>","", $content->content);
+                    $content->content = str_replace("</p>","", $content->content);
+
+                    echo '
+                    <a class="post" href="?idpost='.$row['idpost'].'">
+                        <div class="post-title">'.$row['title'].'</div>
+                        <div class="post-author">'.$row['author'].'</div>
+                        <div class="post-statistic">
+                            <div class="post-like"><i class="fas fa-heart" style="color: #e06666; margin-right: 6px;"></i>'.$row['likes'].'</div>
+                            <div class="post-view"><i class="far fa-eye" style="color: #6ea3ed; margin-right: 6px;"></i>'.$row['views'].'</div>
+                        </div>
+                        <div class="post-content">'.$content->content.'</div>
+                    </a>';
+                }
+            } else {
+                echo "There is no relevant post";
+            }
+        }
+        ?>
     </div>
 </div>

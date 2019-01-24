@@ -57,10 +57,14 @@ function checkExistenceOfClass($class, $array)
                 $count = 0;
                 while ($row = $contentData->fetch_assoc()) {
                     $content = json_decode($row['content']);
+                    $content->content = str_replace("<h3>","", $content->content);
+                    $content->content = str_replace("<p>","", $content->content);
+                    $content->content = str_replace("</h3>","", $content->content);
+                    $content->content = str_replace("</p>","", $content->content);
                     $count++;
                     if ($count > 6) break;
                     echo '
-                        <div class="post">
+                        <a class="post" href="http://localhost/project2/view/detail.php?idpost='.$row['idpost'].'">
                             <div class="post-title">' . $row['title'] . '</div>
                             <div class="post-author">' . $row['author'] . '</div>
                             <div class="post-statistic">
@@ -68,7 +72,7 @@ function checkExistenceOfClass($class, $array)
                                 <div class="post-view"><i class="far fa-eye" style="color: #6ea3ed; margin-right: 6px;"></i>' . $row['views'] . '</div>
                             </div>
                             <div class="post-content">' . $content->content . '</div>
-                        </div>
+                        </a>
                     ';
                 }
             } else {
@@ -103,7 +107,7 @@ else {
             <div class="news">
                 <div class="mainpage-news-title">
                     <div class="news-title">Lớp 9</div>
-                    <div class="news-viewall">Xem tất cả<i class="fas fa-caret-right" style="margin-left: 4px;"></i></div>
+                    <div><a href="http://localhost/project2/view/class.php?class=9" class="news-viewall">Xem tất cả<i class="fas fa-caret-right" style="margin-left: 4px;"></i></a></div>
                     <div class="mainpage-tab">
                         <div class="tab-subject">Toán học</div>
                         <div class="tab-subject-active">Văn học</div>
@@ -119,10 +123,12 @@ else {
         $count = 0;
         while ($row = $listOfPost9th->fetch_assoc()) {
             $content = json_decode($row['content']);
+            $content->content = str_replace("<h3>","", $content->content);
+            $content->content = str_replace("</h3>","", $content->content);
             $count++;
             if ($count > 6) break;
             echo '
-                    <div class="post">
+                    <a class="post" href="http://localhost/project2/view/detail.php?idpost='.$row['idpost'].'">
                         <div class="post-title">' . $row['title'] . '</div>
                         <div class="post-author">' . $row['author'] . '</div>
                         <div class="post-statistic">
@@ -133,7 +139,7 @@ else {
                         </div>
                         <div class="post-content">' . $content->content . '
                         </div>
-                    </div>
+                    </a>
                     ';
         }
     } else {
@@ -164,10 +170,14 @@ else {
         $count = 0;
         while ($row = $listOfPost9th->fetch_assoc()) {
             $content = json_decode($row['content']);
+            $content->content = str_replace("<h3>","", $content->content);
+            $content->content = str_replace("<p>","", $content->content);
+            $content->content = str_replace("</h3>","", $content->content);
+            $content->content = str_replace("</p>","", $content->content);
             $count++;
             if ($count > 6) break;
             echo '
-                    <div class="post">
+                    <a class="post" href="http://localhost/project2/view/detail.php?idpost='.$row['idpost'].'">
                         <div class="post-title">' . $row['title'] . '</div>
                         <div class="post-author">' . $row['author'] . '</div>
                         <div class="post-statistic">
@@ -178,7 +188,7 @@ else {
                         </div>
                         <div class="post-content">' . $content->content . '
                         </div>
-                    </div>
+                    </a>
                     ';
         }
     } else {

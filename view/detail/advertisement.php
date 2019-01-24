@@ -5,6 +5,21 @@
  * Date: 16/01/2019
  * Time: 11:29
  */
+
+require_once './../model/post-model.php';
+
+$idpost = $_GET['idpost'];
+$post = getDetailPost($idpost);
+$class = '';
+$subject = '';
+
+while ($row = $post->fetch_assoc()) {
+    $class = $row['class'];
+    $subject = $row['subject'];
+    break;
+}
+
+$listRelevantPost = getListPostWithClassAndSubject($class, $subject);
 ?>
 
 <div class="detail-advertisement">
@@ -16,22 +31,38 @@
                 <div class="_" style="bottom: 20px;"></div>
             </div>
             <div class="detail-related-cat">
-                <div class="detail-related-link"><a class='a-link-detail' href="#">Soạn bài Bánh chưng bánh
-                        giày</a></div>
-                <div class="detail-related-link"><a class='a-link-detail' href="#">Người lái đò trên sông
-                        Lô</a></div>
-                <div class="detail-related-link"><a class='a-link-detail' href="#">Chiết lược ngà bằng vàng
-                        ngà mới nhất luôn</a></div>
-                <div class="detail-related-link"><a class='a-link-detail' href="#">Soạn bài bánh chưng bánh
-                        giày</a></div>
-                <div class="detail-related-link"><a class='a-link-detail' href="#">Người lái đò trên sông
-                        lô</a></div>
-                <div class="detail-related-link"><a class='a-link-detail' href="#">Chiết lược ngà bằng vàng
-                        ngà mới nhất luôn</a></div>
-                <div class="detail-related-link"><a class='a-link-detail' href="#">Soạn bài bánh chưng bánh
-                        giày</a></div>
-                <div class="detail-related-link"><a class='a-link-detail' href="#">Người lái đò trên sông
-                        lô</a></div>
+            <?php
+            if ($listRelevantPost == 'error connection') echo 'can not connect to database';
+            else {
+                if ($listRelevantPost->num_rows > 0) {
+                    $count = 0;
+                    while ($row = $listRelevantPost->fetch_assoc()) {
+                        $count++;
+
+                        if ($count > 6) break;
+
+                        echo '<div class="detail-related-link"><a class=\'a-link-detail\' href="http://localhost/project2/view/detail.php?idpost='.$row['idpost'].'">'.$row['title'].'</a></div>';
+                    }
+                } else {
+                    echo "There is no relevant post";
+                }
+            }
+            ?>
+
+<!--                <div class="detail-related-link"><a class='a-link-detail' href="#">Người lái đò trên sông-->
+<!--                        Lô</a></div>-->
+<!--                <div class="detail-related-link"><a class='a-link-detail' href="#">Chiết lược ngà bằng vàng-->
+<!--                        ngà mới nhất luôn</a></div>-->
+<!--                <div class="detail-related-link"><a class='a-link-detail' href="#">Soạn bài bánh chưng bánh-->
+<!--                        giày</a></div>-->
+<!--                <div class="detail-related-link"><a class='a-link-detail' href="#">Người lái đò trên sông-->
+<!--                        lô</a></div>-->
+<!--                <div class="detail-related-link"><a class='a-link-detail' href="#">Chiết lược ngà bằng vàng-->
+<!--                        ngà mới nhất luôn</a></div>-->
+<!--                <div class="detail-related-link"><a class='a-link-detail' href="#">Soạn bài bánh chưng bánh-->
+<!--                        giày</a></div>-->
+<!--                <div class="detail-related-link"><a class='a-link-detail' href="#">Người lái đò trên sông-->
+<!--                        lô</a></div>-->
             </div>
         </div>
     </div>

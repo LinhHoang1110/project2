@@ -36,3 +36,25 @@ function getListPostOfIndividualClass($class){
     if($conn == 'error') return 'error connection';
     return mysqli_query($conn, $getListPost);
 }
+
+/**
+ * Get list of Post with specified class and subject
+ * @param $class number
+ * @param $subject subject's name
+ * @return bool|mysqli_result|string
+ */
+function getListPostWithClassAndSubject($class, $subject){
+    $getListPost = 'SELECT * FROM vnpTraining.post WHERE class = "'.$class.'" AND subject="'.$subject.'"';
+
+    $conn = getConn();
+    if($conn == 'error') return 'error connection';
+    return mysqli_query($conn, $getListPost);
+}
+
+function getDetailPost($idpost){
+    $getSinglePost = 'SELECT * FROM vnpTraining.post WHERE idpost = "'.$idpost.'"';
+
+    $conn = getConn();
+    if($conn == 'error') return 'error connection';
+    return mysqli_query($conn, $getSinglePost);
+}
