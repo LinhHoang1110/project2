@@ -17,7 +17,7 @@ $post = getDetailPost($idpost);
         <?php
         while($row = $post->fetch_assoc()){
             echo '
-            <div class="grade-header-path"><a class="header-path" href="./mainpage.php">Trang chủ</a> / <a class="header-path" href="../class/body.php">Lớp '.$row['class'].'</a> / <a class="header-path" href="#">'.$row['subject'].'</a> / <a class="header-path" href="#">'.$row['category'].'</a> / <a class="header-path" href="#">'.$row['title'].'</a>
+            <div class="grade-header-path"><a class="header-path" href="./mainpage.php">Trang chủ</a> / <a class="header-path" href="./class.php?class=9">Lớp '.$row['class'].'</a> / <a class="header-path" href="#">'.$row['subject'].'</a> / <a class="header-path" href="#">'.$row['category'].'</a> / <a class="header-path" href="#">'.$row['title'].'</a>
             </div>
             <!-- <div class="grade-circle-big">
                 <div class="grade-circle-small"></div>

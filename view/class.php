@@ -18,4 +18,5 @@
 </body>
 <script src="./../js/all.js"></script>
 <script src="./../js/class.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </html>

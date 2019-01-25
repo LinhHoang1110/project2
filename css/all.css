@@ -724,7 +724,7 @@ a {
     margin: 3.5px;
     font-family: Roboto-Regular;
     font-size: 15px;
-    display: none;
+    /*display: none;*/
     line-height: 30px;
     justify-items: center;
     text-align: center;

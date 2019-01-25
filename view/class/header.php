@@ -9,8 +9,8 @@
 
 <div class="grade-header">
     <div class="grade-header-frame">
-        <div class="grade-header-path"><a class="header-path" href="../mainpage/body.php">Trang chủ</a> / <a
-                class="header-path" href="../mainpage/body.php">lớp 9</a></div>
+        <div class="grade-header-path"><a class="header-path" href="./mainpage.php">Trang chủ</a> / <a
+                class="header-path" href="./class.php?class=9">lớp 9</a></div>
         <!-- <div class="grade-circle-big">
             <div class="grade-circle-small"></div>
         </div> -->

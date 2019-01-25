@@ -10,7 +10,7 @@ require_once './../model/navbar-model.php';
 
 <div class="menuheader" id="menuheader">
     <div class="mainpage-header">
-        <a class="header-logo flex-col" href="#">
+        <a class="header-logo flex-col" href="./mainpage.php">
             <img src="./../images/trangchu/trangchu_logo.png">
         </a>
         <div class="flex-col icon-expand-container">

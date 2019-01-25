@@ -83,13 +83,9 @@ $listMath = getListPostWithClassAndSubject($class, "Toan hoc");
                 if($check){
                     echo '
                     <div class="grade-shadow"></div>
-                    <div class="flex-row-nowrap">
+                    <div class="flex-row-nowrap" id="literatureMenu">
                         <button class="grade-btn" style="margin-bottom: 15px;" id="expand-sv">Xem thêm</button>
                         <div class="preload-icon" id="preload-icon"></div>
-                        <div class="grade-circle grade-circle-active">1</div>
-                        <div class="grade-circle">2</div>
-                        <div class="grade-circle">3</div>
-                        <div class="grade-circle">4</div>
                     </div>';
                 }
                 echo '</div>';
