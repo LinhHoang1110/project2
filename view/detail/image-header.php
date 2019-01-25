@@ -8,8 +8,10 @@
 
 require_once './../model/post-model.php';
 
+$postModel = new Post();
+
 $idpost = $_GET['idpost'];
-$post = getDetailPost($idpost);
+$post = $postModel->getDetailPost($idpost);
 ?>
 
 <div class="grade-header">

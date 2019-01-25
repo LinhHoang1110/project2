@@ -8,8 +8,10 @@
 
 require_once './../model/post-model.php';
 
+$postModel = new Post();
+
 $idpost = $_GET['idpost'];
-$post = getDetailPost($idpost);
+$post = $postModel->getDetailPost($idpost);
 $class = '';
 $subject = '';
 
@@ -19,7 +21,7 @@ while ($row = $post->fetch_assoc()) {
     break;
 }
 
-$listRelevantPost = getListPostWithClassAndSubject($class, $subject);
+$listRelevantPost = $postModel->getListPostWithClassAndSubject($class, $subject);
 ?>
 
 <div class="detail-advertisement">

@@ -6,6 +6,8 @@
  * Time: 10:27
  */
 require_once './../model/navbar-model.php';
+
+$navbar =  new Navbar();
 ?>
 
 <div class="menuheader" id="menuheader">
@@ -42,7 +44,7 @@ require_once './../model/navbar-model.php';
         <div class="menu-header flex-row-nowrap" style="z-index: 502;">
             <?php
             //            =======================Read from database==========================
-            $navbar_data_object = getNavbar();
+            $navbar_data_object = $navbar->getNavbar();
             if ($navbar_data_object == 'error connection') {
                 echo '<br>fail to connect database<br/>';
             } else {
@@ -73,29 +75,6 @@ require_once './../model/navbar-model.php';
                     echo "0 results";
                 }
             }
-
-            //            =========================Read from file=========================
-            //            $header_data = file_get_contents('./../data/navbar.json');
-            //            $header_class = json_decode($header_data);
-            //            $quantity_class = count($header_class);
-            //            for ($i = $quantity_class - 1; $i >= 0; --$i) {
-            //                echo '
-            //                    <div class="colmenu">
-            //                        <div class="class">Lớp ' . ($i + 1) . '</div>
-            //                        <div class="the' . generateClassName($i + 1) . ' boardsubject">
-            //                            <div class="subjectall">
-            //                                '.generateColumnOfSubject($header_class[$i]->subject).'
-            //                                <div class="number" style="position: absolute;">
-            //                                    <div class="number12-container">
-            //                                        <div class="number-border"></div>
-            //                                        <div class="number'.($i+1).'-text">'.($i+1).'</div>
-            //                                    </div>
-            //                                </div>
-            //                            </div>
-            //                        </div>
-            //                    </div>
-            //                    ';
-            //            }
 
             /**
              * generate name of class with specified number

@@ -9,9 +9,10 @@
 require_once './../model/post-model.php';
 
 $type = $_GET['type'];
+$postModel = new Post();
 
 if($type == 'getAllPost'){
-    $post = getAllPost();
+    $post = $postModel->getAllPost();
 
     $returnValue = [];
 

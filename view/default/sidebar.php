@@ -7,6 +7,8 @@
  */
 
 require_once './../model/navbar-model.php';
+
+$navbar = new Navbar();
 ?>
 
 <div class="sidebar" id="sidebar">
@@ -29,7 +31,7 @@ require_once './../model/navbar-model.php';
     <div>
         <?php
         //        =========================Read from database==========================
-        $navbar_data_object = getNavbar();
+        $navbar_data_object = $navbar->getNavbar();
         if ($navbar_data_object == 'error connection') {
             echo '<br>fail to connect database<br/>';
         } else {

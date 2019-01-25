@@ -8,12 +8,21 @@
 
 require_once './../model/connectDB.php';
 
-function getNavbar(){
+class Navbar{
+    private $getNavbarSql = 'SELECT * FROM vnpTraining.navbar ORDER BY class DESC';
+    private $conn;
 
-    $getNavbarSql = 'SELECT * FROM vnpTraining.navbar ORDER BY class DESC';
+    public function __construct()
+    {
+        $this->conn = Database::getConnection();
+    }
 
-    $conn = getConn();
-    if($conn == 'error') return 'error connection';
-    return mysqli_query($conn, $getNavbarSql);
-//    return 0;
+    /**
+     * Get class and subjects in each class
+     * @return bool|mysqli_result|string
+     */
+    public function getNavbar(){
+        if($this->conn == 'error') return 'error connection';
+        else return mysqli_query($this->conn, $this->getNavbarSql);
+    }
 }

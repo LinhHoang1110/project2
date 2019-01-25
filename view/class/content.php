@@ -11,25 +11,12 @@ require_once './../model/post-model.php';
 
 <?php
 $class = $_GET['class'];
+$post = new Post();
 
 //    =====================Get data from database=========================
-$listLiterature = getListPostWithClassAndSubject($class,"Van hoc");
-$listMath = getListPostWithClassAndSubject($class, "Toan hoc");
+$listLiterature = $post->getListPostWithClassAndSubject($class,"Van hoc");
+$listMath = $post->getListPostWithClassAndSubject($class, "Toan hoc");
 
-//    =====================Get data from file========================
-//    $contentData = file_get_contents('./../data/post.json');
-//    $contentPost = json_decode($contentData);
-//    $listSv = array();
-//    $listTh = array();
-//
-//    for ($i = 0; $i < count($contentPost); ++$i) {
-//        if ($contentPost[$i]->category == "Soạn văn") {
-//            $sv++;
-//            array_push($listSv, $i);
-//        } else if ($contentPost[$i]->category == "Toán học") {
-//            array_push($listTh, $i);
-//        }
-//    }
 ?>
 
 <div class="grade-content">

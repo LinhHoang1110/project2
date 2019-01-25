@@ -9,7 +9,8 @@
 require_once './../model/post-model.php';
 
 $idpost = $_GET['idpost'];
-$post = getDetailPost($idpost);
+$postModel = new Post();
+$post = $postModel->getDetailPost($idpost);
 ?>
 
 <div class="detail-content">
