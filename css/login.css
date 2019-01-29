@@ -1,0 +1,263 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.login-frame{
+    width: 100%;
+    height: 100%;
+    /*background: linear-gradient(to top right, #795CB8, #C657B6);*/
+    background: linear-gradient(to top right, #f90, #00a888);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.content, .createAccFrame {
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 0px;
+    box-shadow: 0 0 20px gray;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 1s;
+}
+
+.content {
+    width: 300px;
+    min-height: 150px;
+}
+
+.createAccFrame {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 500px;
+    width: 40%;
+    min-height: 150px;
+    padding: 20px 20px;
+    max-height: 500px;
+    opacity: 0;
+    -webkit-transform: translateY(500px);
+    -moz-transform: translateY(500px);
+    -ms-transform: translateY(500px);
+    -o-transform: translateY(500px);
+    transform: translateY(500px);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    height: 100%;
+    padding: 50px 0;
+}
+
+@font-face {
+    font-family: Roboto-Bold;
+    src: url("./../fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url("./../fonts/Roboto-Regular.ttf");
+}
+
+.title {
+    font-family: Roboto-Bold;
+    font-size: 35px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.username, .password, .btnlogin {
+    height: 40px;
+    font-family: Roboto-Regular;
+    font-size: 15px;
+    margin: 5px;
+    border-style: solid;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border-width: 0px;
+    background-color: lightgray;
+    line-height: 40px;
+    padding: 0px 20px 0px 40px;
+    outline: none;
+    background-size: 20px 20px;
+    background-position-y: center;
+    background-position-x: 10px;
+    background-repeat: no-repeat;
+}
+
+.username, .password {
+    width: 70%;
+}
+
+.username {
+    background-image: url("./../images/login/user-solid.svg");
+}
+
+.password {
+    background-image: url("./../images/login/key-solid.svg");
+}
+
+.btnlogin {
+    width: 60%;
+    background: linear-gradient(to bottom left, #f90, #00a888);
+    outline: none;
+    transition: all 1s;
+    text-align: center;
+}
+
+.btnsignup {
+    width: 30%;
+    float: right;
+    background: linear-gradient(to bottom left, #f90, #00a888);
+    outline: none;
+    transition: all 1s;
+    height: 40px;
+    font-size: 15px;
+    margin: 5px;
+    border-style: solid;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border-width: 0px;
+    line-height: 40px;
+    padding: 0px 10px;
+}
+
+.btnlogin:hover {
+    transition: all 1s;
+}
+
+.text-createAcc {
+    width: 80%;
+    text-align: center;
+    font-family: Roboto-Regular;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.createForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 500px;
+    overflow: auto;
+}
+
+.createRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.title-cre, .input-content {
+    font-family: Roboto-Regular;
+    font-size: 15px;
+    height: 40px;
+    margin: 5px;
+    border-style: solid;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border-width: 0px;
+    line-height: 40px;
+    outline: none;
+    background-size: 20px 20px;
+    background-position-y: center;
+    background-position-x: 10px;
+    background-repeat: no-repeat;
+    transition: all 1s;
+}
+
+.title-cre {
+    width: 30%;
+}
+
+.input-content {
+    width: 70%;
+    background-color: lightgray;
+    padding: 0px 20px 0px 40px;
+}
+
+.input-content-name {
+    background-image: url("./../images/login/file-signature-solid.svg");
+}
+
+.input-content-birth {
+    background-image: url("./../images/login/calendar-alt-regular.svg");
+}
+
+.input-content-phone {
+    background-image: url("./../images/login/mobile-alt-solid.svg");
+}
+
+.input-content-position {
+    background-image: url("./../images/login/map-pin-solid.svg");
+}
+
+.input-content-username {
+    background-image: url("./../images/login/signature-solid.svg");
+}
+
+.input-content-pass {
+    background-image: url("./../images/login/key-solid.svg");
+}
+
+@media only screen and (max-width: 600px) {
+    .input-content {
+        width: 50%;
+    }
+
+    .createAccFrame {
+        min-width: 350px;
+    }
+
+    .createAccFrame {
+        padding: 20px 10px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .btnsignup {
+        width: 40%;
+        margin-top: 20px;
+    }
+
+    .input-content {
+        width: 100%;
+        padding: 0 0 0 40px;
+    }
+
+    .createAccFrame {
+        padding: 20px 10px;
+        min-width: 250px;
+    }
+
+    .createForm {
+        display: initial;
+    }
+
+    .createRow {
+        flex-wrap: wrap;
+    }
+
+    .title-cre {
+        width: 100%;
+    }
+}
