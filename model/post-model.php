@@ -10,7 +10,8 @@ require_once './../model/connectDB.php';
 
 class Post{
     private $conn;
-    private $getAll = 'SELECT * FROM vnpTraining.post';
+    private $getAll = 'SELECT * FROM post';
+//    private $getAll = 'SELECT * FROM vnpTraining.post';
     private $getQuantityOfClass = 'SELECT distinct class FROM vnpTraining.post';
 
     public function __construct()

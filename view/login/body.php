@@ -9,17 +9,17 @@
 
 <div class="login-frame">
     <div class="content">
-        <form class="login-form" action="#">
+        <form class="login-form" action="http://localhost/project2/controller/login/login.php">
             <div class="title">Đăng nhập</div>
-            <input class="username" name="login-username" type="text" placeholder="Tên đăng nhập" required>
-            <input class="password" name="login-password" type="password" placeholder="Password" required>
+            <input class="username" name="login_username" type="text" placeholder="Tên đăng nhập" required>
+            <input class="password" name="login_password" type="password" placeholder="Password" required>
             <button class="btnlogin" type="submit">Đăng nhập <i class="fas fa-sign-in-alt"></i></button>
             <div class="text-createAcc" id="text-createAcc"><i>Tạo tài khoản</i></div>
         </form>
     </div>
 
     <div class="createAccFrame">
-        <form class="createForm" action="#">
+        <form class="createForm" action="http://localhost/project2/controller/login/login.php">
             <div class="title">Đăng ký</div>
             <div class="createRow">
                 <div class="title-cre">Họ và tên</div>
@@ -36,6 +36,10 @@
             <div class="createRow">
                 <div class="title-cre">Chức vụ</div>
                 <input class="input-content input-content-position" name="signup-position" type="text" placeholder="User" required>
+            </div>
+            <div class="createRow">
+                <div class="title-cre">Mail</div>
+                <input class="input-content input-content-username" name="signup-mail" type="email" placeholder="nguyenvana@gmail.com" required>
             </div>
             <div class="createRow">
                 <div class="title-cre">Tên đăng nhập</div>
