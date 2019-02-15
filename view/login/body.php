@@ -9,7 +9,7 @@
 
 <div class="login-frame">
     <div class="content">
-        <form class="login-form" action="http://localhost/project2/controller/login/login.php">
+        <form class="login-form" action="http://localhost/project2/controller/login/login.php" autocomplete="off">
             <div class="title">Đăng nhập</div>
             <input class="username" name="login_username" type="text" placeholder="Tên đăng nhập" required>
             <input class="password" name="login_password" type="password" placeholder="Password" required>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="createAccFrame">
-        <form class="createForm" action="http://localhost/project2/controller/login/login.php">
+        <form class="createForm" action="http://localhost/project2/controller/login/login.php" autocomplete="off">
             <div class="title">Đăng ký</div>
             <div class="createRow">
                 <div class="title-cre">Họ và tên</div>

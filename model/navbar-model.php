@@ -9,7 +9,7 @@
 require_once './../model/connectDB.php';
 
 class Navbar{
-    private $getNavbarSql = 'SELECT * FROM vnpTraining.navbar ORDER BY class DESC';
+    private $getNavbarSql = 'SELECT * FROM navbar ORDER BY class DESC';
     private $conn;
 
     public function __construct()

@@ -3,9 +3,11 @@
 class Database
 {
     private static $servername = "localhost";
-    private static $username = "manhnt";
-    private static $password = "220897";
-    private static $dbname = "vnpTraining";
+//    private static $username = "manhnt";
+    private static $username = "root";
+//    private static $password = "220897";
+    private static $password = "";
+    private static $dbname = "vnpProject2";
     private static $conn;
 
     private function __construct()

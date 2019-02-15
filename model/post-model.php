@@ -12,7 +12,7 @@ class Post{
     private $conn;
     private $getAll = 'SELECT * FROM post';
 //    private $getAll = 'SELECT * FROM vnpTraining.post';
-    private $getQuantityOfClass = 'SELECT distinct class FROM vnpTraining.post';
+    private $getQuantityOfClass = 'SELECT distinct class FROM post';
 
     public function __construct()
     {
@@ -43,7 +43,7 @@ class Post{
      * @return bool|mysqli_result|string
      */
     function getListPostOfIndividualClass($class){
-        $getListPost = 'SELECT * FROM vnpTraining.post WHERE class = "'.$class.'"';
+        $getListPost = 'SELECT * FROM post WHERE class = "'.$class.'"';
 
         if($this->conn == 'error') return 'error connection';
         return mysqli_query($this->conn, $getListPost);
@@ -56,7 +56,7 @@ class Post{
      * @return bool|mysqli_result|string
      */
     function getListPostWithClassAndSubject($class, $subject){
-        $getListPost = 'SELECT * FROM vnpTraining.post WHERE class = "'.$class.'" AND subject="'.$subject.'"';
+        $getListPost = 'SELECT * FROM post WHERE class = "'.$class.'" AND subject="'.$subject.'"';
 
         if($this->conn == 'error') return 'error connection';
         return mysqli_query($this->conn, $getListPost);
@@ -68,7 +68,7 @@ class Post{
      * @return bool|mysqli_result|string
      */
     function getDetailPost($idpost){
-        $getSinglePost = 'SELECT * FROM vnpTraining.post WHERE idpost = "'.$idpost.'"';
+        $getSinglePost = 'SELECT * FROM post WHERE idpost = "'.$idpost.'"';
 
         if($this->conn == 'error') return 'error connection';
         return mysqli_query($this->conn, $getSinglePost);

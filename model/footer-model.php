@@ -2,7 +2,7 @@
 require_once './../model/connectDB.php';
 
 class Footer{
-    private $getSubjectSql = 'SELECT * FROM vnpTraining.footer';
+    private $getSubjectSql = 'SELECT * FROM footer';
     private $conn;
 
     public function __construct()
