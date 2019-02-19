@@ -6,7 +6,11 @@
  * Time: 08:13
  */
 
+//require_once './../../model/post-model.php';
+
 class Admin {
+    private $postModel;
+
     public function __construct()
     {
         require_once './../../view/admin/adpost.php';

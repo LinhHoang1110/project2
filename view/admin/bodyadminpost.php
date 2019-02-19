@@ -10,10 +10,8 @@
     <div class="admin-frame-content">
         <div class="admin-post-header">
             <input class="admin-input" type="text" placeholder="Nhập từ khóa tìm kiếm">
-            <input class="admin-btn" type="button" value="Tim kiem">
-            <button class="admin-btn" id="admin-add-post" type="button" style="margin-right: 10px;"><i class="fas fa-plus"></i> Them bai
-                dang
-            </button>
+            <input class="admin-btn" id="admin-find-post" type="button" value="Tìm kiếm">
+            <button class="admin-btn" id="admin-add-post" type="button" style="margin-right: 10px;"><i class="fas fa-plus"></i> Thêm bài đăng</button>
         </div>
         <div style="overflow: auto">
             <div class="_"></div>
