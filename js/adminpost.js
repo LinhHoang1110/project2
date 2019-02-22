@@ -5,8 +5,6 @@ let stateOfForm = 'none'; // addPost/ editPost/ viewPost
 
 window.addEventListener('load', function () {
     // Set font size for menu
-    document.getElementById('admin-submenu-post').style.fontSize = '20px';
-    document.getElementById('admin-submenu-post').style.color = 'white';
     document.getElementById('admin-submenu-post-icon').style.fontSize = '25px';
 
     document.getElementById('admin-find-post').onclick = function(){
@@ -81,9 +79,10 @@ function getAllPost() {
         .then(function (response) {
             // handle success
             listPost = response.data;
-            displayPost();
 
             console.log(listPost);
+
+            displayPost();
 
             let subMenu = document.getElementById('admin-post-menu');
 
@@ -145,7 +144,7 @@ function displayPost(tab) {
     // load post for the first time
     if (tab == undefined) {
         start = 0;
-        finish = number - 1;
+        finish = listPost.length - 1;
     } else if ((tab > ((listPost.length / number) + 1)) || ((listPost % number == 0) && (tab > listPost.length / number))) {
         return 'error';
     } else {
@@ -158,6 +157,7 @@ function displayPost(tab) {
     }
 
     for (let i = start; i <= finish; ++i) {
+        console.log(start, finish);
         createNewLinePost(listPost[i]);
     }
 

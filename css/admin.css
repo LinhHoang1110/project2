@@ -10,14 +10,19 @@ html, body {
     height: 100%;
 }
 
+a {
+    text-decoration: none;
+}
+
 /*=============================side bar=====================================*/
 
 .admin-sidebar {
     width: 250px;
-    background-color: #ff9900;
+    /*background-color: rgb(247, 243, 97);*/
     height: 100%;
     z-index: 2;
     min-width: 250px;
+    background: linear-gradient(to bottom, rgb(247, 243, 97), #ffad00);
 }
 
 .admin-logo {
@@ -29,7 +34,7 @@ html, body {
 
 .admin-submenu {
     font-family: Roboto-Medium;
-    color: lightgrey;
+    color: #696767;
     width: 100%;
     height: 60px;
     font-size: 13px;
@@ -45,13 +50,21 @@ html, body {
 }
 
 .admin-submenu:hover {
+    color: black;
+}
+
+.admin-submenu-active {
     font-size: 20px;
-    color: white;
+    color: black;
+}
+
+.admin-icon-submenu-active {
+    font-size: 25px;
 }
 
 .icon-submenu {
     margin-right: 10px;
-    font-size: 20px;
+    /*font-size: 20px;*/
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -59,10 +72,31 @@ html, body {
     transition: all 0.5s;
 }
 
-.admin-submenu:hover .icon-submenu {
-    font-size: 25px;
+.a-btn {
+    width: fit-content;
+    min-width: fit-content;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: #00a888;
+    height: 35px;
+    color: #00a888;
+    font-family: Roboto-Regular;
+    font-size: 13px;
+    justify-items: center;
+    text-align: center;
+    transition: 0.5s;
+    background-color: white;
+    margin: 18px 0 0 10px;
+    padding: 0 10px;
+    line-height: 35px;
+    cursor: pointer;
 }
 
+.a-btn:hover {
+    background-color: #00a888;
+    color: white;
+}
 /*================================content==========================*/
 
 .admin-content {
@@ -333,6 +367,222 @@ html, body {
     transform: scale(1.5);
 }
 
+/*============================class============================*/
+.table-class-stt, .table-class-class, .table-class-subject, .table-class-action {
+    border-color: #828994;
+}
+
+.table-class-stt {
+    border-style: solid dashed solid solid;
+    border-width: 1px;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.table-class-class {
+    border-style: solid dashed;
+    border-width: 1px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.table-class-subject {
+    border-style: solid dashed;
+    border-width: 1px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.list-subject {
+    border-radius: 10px;
+    width: 20%;
+    font-family: Roboto-Regular;
+    font-size: 13px;
+    line-height: 25px;
+    border-style: solid;
+    border-color: #ffad00;
+    border-width: 1.5px;
+    padding: 5px 10px;
+    margin: 5px;
+    height: 25px;
+    cursor: default;
+}
+
+.table-class-action {
+    border-style: solid solid solid dashed;
+    border-width: 1px;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*==========================Subject=========================*/
+.admin-subject-title {
+    font-family: Roboto-Medium;
+    font-size: 45px;
+    float: left;
+    color: #00a888;
+    width: 100%;
+    margin-left: 10px;
+    line-height: 75px;
+}
+
+.admin-selectbox {
+    font-family: Roboto-Regular;
+    font-size: 20px;
+    float: left;
+    width: 150px;
+    height: 35px;
+    line-height: 35px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: white;
+    margin-left: 10px;
+    margin-top: 23px;
+}
+
+.table-subject-subject, .table-subject-category, .table-subject-action {
+    border-color: #828994;
+}
+
+.table-subject-subject {
+    border-style: solid dashed solid solid;
+    border-width: 1px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.table-subject-category {
+    border-style: solid dashed;
+    border-width: 1px;
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.table-subject-action {
+    border-style: solid solid solid dashed;
+    border-width: 1px;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*=================================add class==========================*/
+.admin-addclass-title {
+    font-family: Roboto-Regular;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+.admin-addclass-input {
+    border-style: solid;
+    border-width: 1px;
+    background-color: white;
+    padding: 0 5px;
+    font-family: Roboto-Regular;
+    font-size: 13px;
+    border-radius: 5px;
+    border-color: #a79f9f;
+    height: 37px;
+}
+
+.subject-table {
+    font-family: Roboto-Regular;
+    margin-top: 15px;
+}
+
+.cell-header {
+    font-size: 17px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.col-left, .col-center, .col-right {
+    border-color: #828994;
+}
+
+.col-left {
+    border-style: solid dashed solid solid;
+    border-width: 1px;
+}
+
+.col-center {
+    border-style: solid dashed;
+    border-width: 1px;
+}
+
+.col-right {
+    border-style: solid solid solid dashed;
+    border-width: 1px;
+}
+
+.table-subject-name {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.table-subject-category {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.table-subject-action {
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.addclass-category {
+    font-family: Roboto-Regular;
+    font-size: 15px;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 5px 0px 0px 5px;
+    width: fit-content;
+    padding: 0px 10px;
+    line-height: 40px;
+    background-color: #ffad00;
+    margin: 5px 0px 5px 5px;
+}
+
+.addclass-category-delete {
+    margin: 5px 5px 5px 0px;
+    line-height: 40px;
+    background-color: orange;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 0px 5px 5px 0px;
+    width: 35px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.addclass-category-delete:hover {
+    background-color: #ff9407;
+}
+
 /*============================form=============================*/
 .admin-form-post {
     position: fixed;
@@ -445,7 +695,7 @@ html, body {
 
 .admin-form-post-blur {
     position: fixed;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
     z-index: 999;
@@ -462,11 +712,18 @@ html, body {
     -o-transform: translateY(-100%);
     transform: translateY(-100%);
 }
+
 /*==========================flex=========================*/
 .flex-row-nowrap {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 

@@ -10,10 +10,23 @@
 
 class Admin {
     private $postModel;
+    private $currentPage;
 
     public function __construct()
     {
-        require_once './../../view/admin/adpost.php';
+        $nextPage = isset($_GET['type'])?$_GET['type']:'adminpost';
+        $this->redirectPage($nextPage);
+    }
+
+    public function redirectPage($nextPage){
+        if($nextPage !== $this->currentPage) {
+            $currentpage = $nextPage;
+            if($nextPage === 'adminpost') require_once './../../view/admin/adpost.php';
+            else if($nextPage === 'adminclass') require_once './../../view/admin/adclass.php';
+            else if($nextPage === 'adminsubject') require_once './../../view/admin/adsubject.php';
+
+            $this->currentPage = $nextPage;
+        }
     }
 }
 
