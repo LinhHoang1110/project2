@@ -13,11 +13,11 @@ Thực hiện bởi [Nguyễn Tiến Mạnh](https://github.com/tienmanh2208)
 
 ## Link bài làm Yêu cầu 2
 
-[Ảnh và kích cỡ được sử dụng](https://tienmanh2208.github.io/project2/images.html)
+[Ảnh và kích cỡ được sử dụng](https://tienmanh2208.github.io/project2/view/analysis/images.html)
 
-[Fonts và kích cỡ được sử dụng](https://tienmanh2208.github.io/project2/fonts.html)
+[Fonts và kích cỡ được sử dụng](https://tienmanh2208.github.io/project2/view/analysis/fonts.html)
 
-[Màu sắc được sử dụng](https://tienmanh2208.github.io/project2/colors.html)
+[Màu sắc được sử dụng](https://tienmanh2208.github.io/project2/view/analysis/colors.html)
 
 ## Link bài làm Yêu cầu 3
 
@@ -28,8 +28,8 @@ Thực hiện bởi [Nguyễn Tiến Mạnh](https://github.com/tienmanh2208)
 [Layout lớp 9 (images)](https://tienmanh2208.github.io/project2/images/lop9.png)
 
 ## Link bài làm Yêu cầu 4
-[Trang chủ](https://tienmanh2208.github.io/project2/trangchu.html)
+[Trang chủ](https://tienmanh2208.github.io/project2/view/analysis/trangchu.html)
 
-[Chi tiết](https://tienmanh2208.github.io/project2/detail.html)
+[Chi tiết](https://tienmanh2208.github.io/project2/view/analysis/detail.html)
 
 [Lớp 9](https://tienmanh2208.github.io/project2/lop9.html)
