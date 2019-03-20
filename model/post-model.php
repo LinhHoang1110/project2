@@ -6,18 +6,28 @@
  * Time: 11:31
  */
 
-require_once './../model/connectDB.php';
+$rootPath = $_SERVER['DOCUMENT_ROOT'];
+
+//require_once $rootPath.'/project2/model/connectDB.php';
+require_once $rootPath.'/project2/model/PDO.php';
 
 class Post
 {
     private $conn;
     private $getAll = 'SELECT * FROM post';
-//    private $getAll = 'SELECT * FROM vnpTraining.post';
     private $getQuantityOfClass = 'SELECT distinct class FROM post';
+    private $getListPost = 'SELECT * FROM post WHERE class = ?';
+    private $getListPostCS = 'SELECT * FROM post WHERE class = ? AND subject= ?';
+    private $getSinglePost = 'SELECT * FROM post WHERE idpost =:idPost';
+    private $getMaxIdPostQuery = 'SELECT MAX(idpost) FROM post';
+    private $updatePostQuery = 'UPDATE post SET title = ?, author = ?, content = ?, subject = ?, category = ?, class = ?, idUser = ? WHERE (idpost = ?)';
+    private $createPost = 'INSERT INTO post (idpost, title, author, views, likes, content, subject, category, class, idUser) VALUES (?, ?, ?, 0, 0, ?, ?, ?, ?, ?)';
 
     public function __construct()
     {
-        $this->conn = Database::getConnection();
+//        $this->conn = Database::getConnection();
+        global $conn;
+        $this->conn = $conn;
     }
 
     /**
@@ -26,8 +36,12 @@ class Post
      */
     function getAllPost()
     {
-        if ($this->conn == 'error') return 'error connection';
-        return mysqli_query($this->conn, $this->getAll);
+//        if ($this->conn == 'error') return 'error connection';
+//        return mysqli_query($this->conn, $this->getAll);
+        if(!isset($this->conn)) return false;
+        else {
+            return $this->conn->query($this->getAll);
+        }
     }
 
     /**
@@ -36,8 +50,10 @@ class Post
      */
     function getListOfClass()
     {
-        if ($this->conn == 'error') return 'error connection';
-        return mysqli_query($this->conn, $this->getQuantityOfClass);
+//        if ($this->conn == 'error') return 'error connection';
+//        return mysqli_query($this->conn, $this->getQuantityOfClass);
+        if(!isset($this->conn)) return false;
+        else return $this->conn->query($this->getQuantityOfClass);
     }
 
     /**
@@ -47,10 +63,15 @@ class Post
      */
     function getListPostOfIndividualClass($class)
     {
-        $getListPost = 'SELECT * FROM post WHERE class = "' . $class . '"';
-
-        if ($this->conn == 'error') return 'error connection';
-        return mysqli_query($this->conn, $getListPost);
+//        $getListPost = 'SELECT * FROM post WHERE class = "' . $class . '"';
+//
+//        if ($this->conn == 'error') return 'error connection';
+//        return mysqli_query($this->conn, $getListPost);
+        if(!isset($this->conn)) return false;
+        else {
+            $stmt = $this->conn->prepare($this->getListPost);
+            return $stmt->execute(array($class));
+        }
     }
 
     /**
@@ -61,10 +82,15 @@ class Post
      */
     function getListPostWithClassAndSubject($class, $subject)
     {
-        $getListPost = 'SELECT * FROM post WHERE class = "' . $class . '" AND subject="' . $subject . '"';
-
-        if ($this->conn == 'error') return 'error connection';
-        return mysqli_query($this->conn, $getListPost);
+//        $getListPost = 'SELECT * FROM post WHERE class = "' . $class . '" AND subject="' . $subject . '"';
+//
+//        if ($this->conn == 'error') return 'error connection';
+//        return mysqli_query($this->conn, $getListPost);
+        if(!isset($this->conn)) return false;
+        else {
+            $stmt = $this->conn->prepare($this->getListPostCS);
+            return $stmt->execute(array($class, $subject));
+        }
     }
 
     /**
@@ -74,10 +100,16 @@ class Post
      */
     function getDetailPost($idpost)
     {
-        $getSinglePost = 'SELECT * FROM post WHERE idpost = "' . $idpost . '"';
-
-        if ($this->conn == 'error') return 'error connection';
-        return mysqli_query($this->conn, $getSinglePost);
+//        $getSinglePost = 'SELECT * FROM post WHERE idpost = "' . $idpost . '"';
+//
+//        if ($this->conn == 'error') return 'error connection';
+//        return mysqli_query($this->conn, $getSinglePost);
+        if(!isset($this->conn)) return false;
+        else {
+            $stmt = $this->conn->prepare($this->getSinglePost);
+            $stmt->bindValue(':idPost', $idpost, PDO::PARAM_INT);
+            return $stmt->execute(array($idpost));
+        }
     }
 
     /**
@@ -85,10 +117,15 @@ class Post
      * @return bool|mysqli_result|string
      */
     function getMaxIdPost(){
-        $getMaxIdPostQuery = 'SELECT MAX(idpost) FROM post';
+//        $getMaxIdPostQuery = 'SELECT MAX(idpost) FROM post';
+//
+//        if ($this->conn == 'error') return 'error connection';
+//        return mysqli_query($this->conn, $getMaxIdPostQuery);
 
-        if ($this->conn == 'error') return 'error connection';
-        return mysqli_query($this->conn, $getMaxIdPostQuery);
+        if(!isset($this->conn)) return false;
+        else {
+            return $this->conn->query($this->getMaxIdPostQuery);
+        }
     }
 
     /**
@@ -105,8 +142,13 @@ class Post
      */
     function updatePost($title, $author, $content, $subject, $category, $class, $iduser, $idpost)
     {
-        $updatePostQuery = 'UPDATE post SET title = ' . $title . ', author = ' . $author . ', content = ' . $content . ', subject = ' . $subject . ', category = ' . $category . ', class = ' . $class . ', idUser = ' . $iduser . ' WHERE (idpost = ' . $idpost . ')';
-        return $this->conn->query($updatePostQuery);
+//        $updatePostQuery = 'UPDATE post SET title = ' . $title . ', author = ' . $author . ', content = ' . $content . ', subject = ' . $subject . ', category = ' . $category . ', class = ' . $class . ', idUser = ' . $iduser . ' WHERE (idpost = ' . $idpost . ')';
+//        return $this->conn->query($updatePostQuery);
+        if(!isset($this->conn)) return false;
+        else {
+            $stmt = $this->conn->prepare($this->updatePostQuery);
+            return $stmt->execute(array($title, $author, $content, $subject, $category, $class, $iduser, $idpost));
+        }
     }
 
     /**
@@ -122,8 +164,13 @@ class Post
      */
     function addPost($idpost, $title, $author, $content, $subject, $category, $class, $iduser)
     {
-        $createPost = 'INSERT INTO post (idpost, title, author, views, likes, content, subject, category, class, idUser) VALUES (' . $idpost . ', "' . $title . '", "' . $author . '", 0, 0, "' . $content . '", "' . $subject . '", "' . $category . '", ' . $class . ', ' . $iduser . ')';
-
-        return $this->conn->query($createPost);
+//        $createPost = 'INSERT INTO post (idpost, title, author, views, likes, content, subject, category, class, idUser) VALUES (' . $idpost . ', "' . $title . '", "' . $author . '", 0, 0, "' . $content . '", "' . $subject . '", "' . $category . '", ' . $class . ', ' . $iduser . ')';
+//
+//        return $this->conn->query($createPost);
+        if(!isset($this->conn)) return false;
+        else {
+            $stmt = $this->conn->prepare($this->createPost);
+            return $stmt->execute(array($idpost, $title, $author, $content, $subject, $category, $class, $iduser));
+        }
     }
 }

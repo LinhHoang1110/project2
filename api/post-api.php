@@ -37,8 +37,22 @@ if ($type == 'getAllPost') {
         }
     }
 
-
     echo $postModel->addPost($maxIdPost + 1, $title, $author, '{\"content\":\"' . $content . '\"}', $subject, $category, $class, 1);
 } else if ($type == 'updatePost') {
     echo $postModel->updatePost('a', 'b', 'abc', 'c', 'a', '9','1','13');
+} else if($type == 'getSinglePost') {
+    if(isset($_GET['idpost'])) {
+        $post = $postModel->getDetailPost($_GET['idpost']);
+
+        $returnValue = [];
+
+        while ($row = $post->fetch_object()) {
+            $returnValue[] = $row;
+        }
+
+        echo json_encode($returnValue);
+    }
+    else echo false;
+} else {
+    echo false;
 }

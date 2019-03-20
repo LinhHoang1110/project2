@@ -334,11 +334,11 @@ a {
 
 .icon-warning:hover {
     color: #ff9900;
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    transform: scale(1.5);
+    /*-webkit-transform: scale(1.5);*/
+    /*-moz-transform: scale(1.5);*/
+    /*-ms-transform: scale(1.5);*/
+    /*-o-transform: scale(1.5);*/
+    /*transform: scale(1.5);*/
 }
 
 .icon-notice {
@@ -347,11 +347,11 @@ a {
 
 .icon-notice:hover {
     color: darkred;
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    transform: scale(1.5);
+    /*-webkit-transform: scale(1.5);*/
+    /*-moz-transform: scale(1.5);*/
+    /*-ms-transform: scale(1.5);*/
+    /*-o-transform: scale(1.5);*/
+    /*transform: scale(1.5);*/
 }
 
 .icon-success {
@@ -360,11 +360,11 @@ a {
 
 .icon-success:hover {
     color: #00a863;
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    transform: scale(1.5);
+    /*-webkit-transform: scale(1.5);*/
+    /*-moz-transform: scale(1.5);*/
+    /*-ms-transform: scale(1.5);*/
+    /*-o-transform: scale(1.5);*/
+    /*transform: scale(1.5);*/
 }
 
 /*============================class============================*/
@@ -427,9 +427,9 @@ a {
 /*==========================Subject=========================*/
 .admin-subject-title {
     font-family: Roboto-Medium;
-    font-size: 45px;
+    font-size: 30px;
     float: left;
-    color: #00a888;
+    color: black;
     width: 100%;
     margin-left: 10px;
     line-height: 75px;
@@ -564,10 +564,9 @@ a {
     margin: 5px 0px 5px 5px;
 }
 
-.addclass-category-delete {
+.addclass-category-delete, .addclass-category-check {
     margin: 5px 5px 5px 0px;
     line-height: 40px;
-    background-color: orange;
     border-style: solid;
     border-width: 0px;
     border-radius: 0px 5px 5px 0px;
@@ -579,8 +578,24 @@ a {
     transition: all 0.5s;
 }
 
+.addclass-category-delete {
+    background-color: orange;
+}
+
 .addclass-category-delete:hover {
     background-color: #ff9407;
+}
+
+.addclass-category-check {
+    background-color: #a1e497;
+}
+
+.addclass-category-check:hover {
+    background-color: #7bc370;
+}
+
+.category-subject {
+    display: flex;
 }
 
 /*============================form=============================*/
@@ -620,7 +635,7 @@ a {
 
 .form-post-content {
     margin: 10px;
-    height: 400px;
+    height: 500px;
     overflow: auto;
 }
 
@@ -637,6 +652,8 @@ a {
     background-color: lightgrey;
     border-radius: 5px;
     outline: none;
+    width: -webkit-fill-available;
+    border-width: 0px;
 }
 
 .form-post-footer {
@@ -712,6 +729,8 @@ a {
     -o-transform: translateY(-100%);
     transform: translateY(-100%);
 }
+
+
 
 /*==========================flex=========================*/
 .flex-row-nowrap {

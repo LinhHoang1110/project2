@@ -41,7 +41,7 @@ class Login
                         $_SESSION['user_id'] = $row['idUser'];
                     }
 
-                    header('Location: http://localhost/project2/view/mainpage.php');
+                    header('Location: http://localhost/project2/controller/admin/admin.php?type=adminpost');
                 } else {
                     // notify username or password is wrong  or redirect to login page
                     require_once './../../view/login.php';

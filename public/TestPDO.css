@@ -1,0 +1,22 @@
+.header {
+    border-style: solid;
+    border-width: 2px;
+    font-size: 20px;
+}
+
+.cell-center,  .cell-left, .cell-right {
+    border-style: dotted solid dotted solid;
+    border-width: 1px;
+}
+
+.cell-left {
+    width: 30%;
+}
+
+.cell-center {
+    width: 40%;
+}
+
+.cell-right {
+    width: 30%;
+}

@@ -52,12 +52,14 @@ function checkExistenceOfClass($class, $array)
     </div>
     <div class="mainpage-news-content">
         <?php
-        if ($contentData == 'error connection') echo 'can not connect to database';
+//        if ($contentData == 'error connection') echo 'can not connect to database';
+        if ($contentData == false) echo 'none';
         else {
             if ($contentData->num_rows > 0) {
                 // output data of each row
                 $count = 0;
-                while ($row = $contentData->fetch_assoc()) {
+//                while ($row = $contentData->fetch_assoc()) {
+                while ($row = $contentData->fetch(PDO::FETCH_ASSOC)) {
                     $content = json_decode($row['content']);
                     $content->content = str_replace("<h3>","", $content->content);
                     $content->content = str_replace("<p>","", $content->content);
@@ -86,9 +88,10 @@ function checkExistenceOfClass($class, $array)
 </div>
 <?php
 //================get from database======================
-if ($listOfPost9th == 'error connection') echo 'can not connect to database';
+//if ($listOfPost9th == 'error connection') echo 'can not connect to database';
+if ($listOfPost9th == false) echo 'can not connect to database';
 else {
-    if ($listOfPost9th->num_rows > 0) {
+    if ($listOfPost9th->rowCount() > 0) {
         echo '
             <div class="news">
                 <div class="mainpage-news-title">
@@ -107,7 +110,8 @@ else {
 
         // output data of each row
         $count = 0;
-        while ($row = $listOfPost9th->fetch_assoc()) {
+//        while ($row = $listOfPost9th->fetch_assoc()) {
+        while ($row = $listOfPost9th->fetch(PDO::FETCH_ASSOC)) {
             $content = json_decode($row['content']);
             $content->content = str_replace("<h3>","", $content->content);
             $content->content = str_replace("<p>","", $content->content);
@@ -137,7 +141,8 @@ else {
     }
 }
 
-if ($listOfPost8th == 'error connection') echo 'can not connect to database';
+//if ($listOfPost8th == 'error connection') echo 'can not connect to database';
+if ($listOfPost8th == false) echo 'can not connect to database';
 else {
     if ($listOfPost8th->num_rows > 0) {
         echo '
@@ -158,7 +163,8 @@ else {
 
         // output data of each row
         $count = 0;
-        while ($row = $listOfPost9th->fetch_assoc()) {
+//        while ($row = $listOfPost9th->fetch_assoc()) {
+        while ($row = $listOfPost9th->fetch(PDO::FETCH_ASSOC)) {
             $content = json_decode($row['content']);
             $content->content = str_replace("<h3>","", $content->content);
             $content->content = str_replace("<p>","", $content->content);
